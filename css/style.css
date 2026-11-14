@@ -1,0 +1,89 @@
+:root{--y:#FFC20E;--y2:#E0A800;--k:#0A0A0A;--w:#F6F6F2;--r:6px}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{font:400 1.05rem/1.6 Barlow,system-ui,sans-serif;background:var(--w);color:var(--k)}
+h1,h2,h3,.logo,.btn{font-family:'Barlow Condensed',Impact,sans-serif;font-weight:800;line-height:1.05}
+.wrap{max-width:1080px;margin:auto;padding:0 20px}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--y);outline-offset:3px}
+.top{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:12px 20px;background:var(--k);color:#fff;border-bottom:4px solid var(--y)}
+.logo{font-size:1.6rem;text-decoration:none;color:var(--y);letter-spacing:.5px}
+.logo span{color:#fff}
+nav{display:flex;gap:22px}
+nav a{text-decoration:none;font-weight:600}
+nav a:hover{color:var(--y)}
+.burger{display:none;background:none;border:0;color:var(--y);font-size:1.7rem}
+.hero{background:var(--k);color:#fff;padding:72px 0 0}
+.hero h1{font-size:clamp(2.6rem,9vw,5.2rem);max-width:14ch;color:var(--y);text-transform:uppercase}
+.hero p{max-width:52ch;margin:20px 0 28px;color:#ddd;font-size:1.15rem}
+.stripe{height:26px;margin-top:56px;background:repeating-linear-gradient(-45deg,var(--y) 0 22px,var(--k) 22px 44px)}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;padding:12px 24px;font-size:1.2rem;text-decoration:none;background:var(--y);color:var(--k);border:2px solid var(--y);border-radius:var(--r);cursor:pointer;letter-spacing:.3px}
+.btn:hover{background:var(--y2)}
+.btn.ghost{background:transparent;color:inherit;border-color:currentColor}
+.hero .btn.ghost,.dark .btn.ghost{color:#fff}
+.sec{padding:72px 0}
+.sec h2{font-size:clamp(2rem,5vw,3rem);margin-bottom:28px;text-transform:uppercase}
+.sec h2::after{content:"";display:block;width:70px;height:6px;background:var(--y);margin-top:10px}
+.dark{background:var(--k);color:#eee}
+.dark h2{color:#fff}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.card{background:#fff;border:2px solid var(--k);border-left:10px solid var(--y);padding:22px;border-radius:var(--r)}
+.card h3{font-size:1.5rem;margin-bottom:8px}
+.card p{color:#444;font-size:1rem}
+.card .ico{font-size:2rem;display:block;margin-bottom:6px}
+.two{display:grid;gap:40px;grid-template-columns:1fr 1fr;align-items:start}
+.steps{margin:20px 0 0 20px;display:grid;gap:10px}
+.steps li::marker{color:var(--y);font-weight:800}
+.note{background:var(--y);color:var(--k);padding:26px;border-radius:var(--r)}
+.note h3{font-size:1.6rem;margin-bottom:10px}
+.note ul{margin-left:18px;display:grid;gap:8px}
+.info{list-style:none;padding:0;display:grid;gap:12px;margin-bottom:24px}
+.info b{color:var(--y)}
+#mapa{width:100%;height:340px;border:3px solid var(--y);border-radius:var(--r);background:#222}
+footer{background:var(--k);color:#bbb;text-align:center;padding-bottom:20px}
+footer .stripe{margin:0 0 18px}
+.chat-fab{position:fixed;right:16px;bottom:16px;z-index:30;background:var(--y);color:var(--k);border:3px solid var(--k);border-radius:40px;padding:12px 18px;font:700 1rem Barlow,sans-serif;cursor:pointer;box-shadow:0 4px 14px #0005}
+.chat{position:fixed;right:16px;bottom:16px;z-index:40;width:min(360px,calc(100vw - 32px));height:min(520px,calc(100vh - 32px));display:flex;flex-direction:column;background:#fff;border:3px solid var(--k);border-radius:10px;overflow:hidden;box-shadow:0 8px 30px #0006}
+.chat[hidden],.chat-fab[hidden]{display:none}
+.chat header{display:flex;justify-content:space-between;align-items:center;background:var(--k);color:var(--y);padding:12px 14px}
+.chat header button{background:none;border:0;color:#fff;font-size:1.1rem;cursor:pointer}
+.msgs{flex:1;overflow:auto;padding:12px;display:flex;flex-direction:column;gap:8px;background:#f2f2ec}
+.m{max-width:85%;padding:9px 12px;border-radius:10px;font-size:.95rem;line-height:1.4;white-space:pre-line}
+.m.bot{background:#fff;border:1px solid #ccc;align-self:flex-start}
+.m.me{background:var(--y);align-self:flex-end;font-weight:500}
+.m a{font-weight:700}
+.chips{display:flex;gap:6px;flex-wrap:wrap;padding:8px 10px;border-top:1px solid #ddd}
+.chips button{border:2px solid var(--k);background:#fff;border-radius:20px;padding:4px 10px;font:600 .85rem Barlow,sans-serif;cursor:pointer}
+.chips button:hover{background:var(--y)}
+#chatForm{display:flex;gap:6px;padding:8px;border-top:2px solid var(--k)}
+#chatForm input{flex:1;min-width:0;padding:8px 10px;border:2px solid var(--k);border-radius:var(--r);font:inherit}
+#chatForm .btn{padding:6px 14px;font-size:1.05rem}
+@media(max-width:760px){
+  .burger{display:block}
+  nav{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:var(--k);border-bottom:4px solid var(--y)}
+  nav.open{display:flex}
+  nav a{padding:14px 20px;border-top:1px solid #333}
+  .two{grid-template-columns:1fr}
+  .sec{padding:52px 0}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+/* v2 */
+.tools{display:flex;align-items:center;gap:10px}
+.lang{display:flex;border:2px solid var(--y);border-radius:var(--r);overflow:hidden}
+.lang button{background:transparent;color:#fff;border:0;padding:4px 10px;font:700 .9rem Barlow,sans-serif;cursor:pointer}
+.lang button[aria-pressed=true]{background:var(--y);color:var(--k)}
+.kicker{color:var(--y);font:700 1.1rem 'Barlow Condensed',sans-serif;margin-bottom:10px}
+.hero .lead{max-width:52ch;margin:20px 0 28px;color:#ddd;font-size:1.15rem}
+.sub{max-width:60ch;margin:-12px 0 26px;color:#444}
+.h3{font-size:1.7rem;margin:44px 0 16px;text-transform:uppercase}
+.g4{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.card a.more{display:inline-block;margin-top:10px;font-weight:700}
+.card .sku{font:700 .85rem Barlow,sans-serif;color:#777}
+.sys{border:2px solid var(--y);padding:26px;border-radius:var(--r)}
+.sys b{display:block;font:800 2rem 'Barlow Condensed',sans-serif;color:var(--y);margin-bottom:8px}
+.small{font-size:.85rem;color:#999;margin-top:18px}
+.sec:not(.dark) .small{color:#666}
+footer .small{max-width:760px;margin:6px auto 0;padding:0 20px}
+@media(max-width:760px){.tools{gap:6px}}

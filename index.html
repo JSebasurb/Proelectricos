@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Proelectricos Popayán | Centro de servicio autorizado DEWALT</title>
+<meta name="description" content="Herramienta eléctrica DEWALT, inversores y centro de servicio autorizado DEWALT en Popayán. Calle 4 #21C-14.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="top">
+  <a class="logo" href="#inicio" aria-label="Proelectricos">PRO<span>ELECTRICOS</span></a>
+  <nav id="nav" aria-label="Principal">
+    <a href="#productos" data-i18n="nav_products"></a>
+    <a href="#sistemas" data-i18n="nav_systems"></a>
+    <a href="#garantia" data-i18n="nav_warranty"></a>
+    <a href="#contacto" data-i18n="nav_contact"></a>
+  </nav>
+  <div class="tools">
+    <div class="lang" role="group" aria-label="Idioma / Language">
+      <button data-lang="es" aria-pressed="true">ES</button><button data-lang="en" aria-pressed="false">EN</button>
+    </div>
+    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="inicio">
+  <div class="wrap">
+    <p class="kicker" data-i18n="hero_kicker"></p>
+    <h1 data-i18n="hero_title"></h1>
+    <p class="lead" data-i18n="hero_text"></p>
+    <div class="cta">
+      <a class="btn" href="#productos" data-i18n="hero_cta1"></a>
+      <a class="btn ghost" id="waHero" href="#" target="_blank" rel="noopener" data-i18n="hero_cta2"></a>
+    </div>
+  </div>
+  <div class="stripe" aria-hidden="true"></div>
+</section>
+
+<section class="sec" id="productos">
+  <div class="wrap">
+    <h2 data-i18n="prod_title"></h2>
+    <p class="sub" data-i18n="prod_sub"></p>
+    <div class="grid" id="lineas"></div>
+    <h3 class="h3" data-i18n="pop_title"></h3>
+    <div class="grid g4" id="populares"></div>
+  </div>
+</section>
+
+<section class="sec dark" id="sistemas">
+  <div class="wrap two">
+    <article class="sys"><b>20V MAX* XR®</b><p data-i18n="sys_xr"></p></article>
+    <article class="sys"><b>FLEXVOLT 60V MAX*</b><p data-i18n="sys_flex"></p></article>
+  </div>
+  <div class="wrap"><p class="small" data-i18n="sys_note"></p></div>
+</section>
+
+<section class="sec" id="inversores">
+  <div class="wrap two">
+    <div><h2 data-i18n="inv_title"></h2><p data-i18n="inv_text"></p></div>
+    <div class="card"><h3 data-i18n="inv_card_t"></h3><p data-i18n="inv_card_d"></p><a class="btn" id="waInv" href="#" target="_blank" rel="noopener" data-i18n="inv_cta"></a></div>
+  </div>
+</section>
+
+<section class="sec dark" id="garantia">
+  <div class="wrap two">
+    <div>
+      <h2 data-i18n="war_title"></h2>
+      <p data-i18n="war_text"></p>
+      <ol class="steps" id="pasos"></ol>
+      <a class="btn ghost" href="https://www.dewalt.com.co/es-co/soporte/informacion-de-garantia" target="_blank" rel="noopener" data-i18n="war_link"></a>
+    </div>
+    <aside class="note"><h3 data-i18n="war_bring"></h3><ul id="requisitos"></ul></aside>
+  </div>
+</section>
+
+<section class="sec" id="servicio">
+  <div class="wrap">
+    <h2 data-i18n="svc_title"></h2>
+    <div class="grid g3" id="servicios"></div>
+  </div>
+</section>
+
+<section class="sec dark" id="contacto">
+  <div class="wrap two">
+    <div>
+      <h2 data-i18n="con_title"></h2>
+      <ul class="info" id="info"></ul>
+      <div class="cta">
+        <a class="btn" id="waBtn" href="#" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="btn ghost" id="fbBtn" href="#" target="_blank" rel="noopener">Facebook</a>
+        <a class="btn ghost" id="mailBtn" href="#" data-i18n="con_mail"></a>
+      </div>
+    </div>
+    <iframe id="mapa" title="Map" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="stripe" aria-hidden="true"></div>
+  <p>© <span id="year"></span> Proelectricos · Popayán, Cauca</p>
+  <p class="small" data-i18n="legal"></p>
+</footer>
+
+<button class="chat-fab" id="chatFab" data-i18n="chat_fab"></button>
+<section class="chat" id="chat" hidden aria-label="Chat">
+  <header><strong data-i18n="chat_title"></strong><button id="chatClose" aria-label="Close">✕</button></header>
+  <div class="msgs" id="msgs" aria-live="polite"></div>
+  <div class="chips" id="chips"></div>
+  <form id="chatForm"><input id="chatInput" autocomplete="off"><button class="btn" data-i18n="chat_send"></button></form>
+</section>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
