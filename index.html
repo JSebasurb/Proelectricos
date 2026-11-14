@@ -5,17 +5,34 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Proelectricos Popayán | Centro de servicio autorizado DEWALT</title>
 <meta name="description" content="Herramienta eléctrica DEWALT, inversores y centro de servicio autorizado DEWALT en Popayán. Calle 4 #21C-14.">
+<meta name="theme-color" content="#FFC20E">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/icon-32.png" type="image/png" sizes="32x32">
+<link rel="icon" href="assets/icon-16.png" type="image/png" sizes="16x16">
+<link rel="apple-touch-icon" href="assets/icon-180.png">
+<link rel="manifest" href="manifest.webmanifest">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Proelectricos Popayán | Centro de servicio autorizado DEWALT">
+<meta property="og:description" content="Herramienta eléctrica DEWALT, inversores y servicio autorizado en Popayán. Calle 4 #21C-14.">
+<meta property="og:locale" content="es_CO">
+<meta property="og:image" content="assets/logo.svg">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HardwareStore","name":"Proelectricos","description":"Herramienta eléctrica DEWALT, inversores y centro de servicio autorizado DEWALT en Popayán.","email":"proelectricospopayan@hotmail.com","address":{"@type":"PostalAddress","streetAddress":"Calle 4 #21C-14","addressLocality":"Popayán","addressRegion":"Cauca","addressCountry":"CO"},"sameAs":["https://www.facebook.com/share/1E17P7FDqw/"]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<a class="skip" href="#productos" data-i18n="skip"></a>
 <header class="top">
-  <a class="logo" href="#inicio" aria-label="Proelectricos">PRO<span>ELECTRICOS</span></a>
+  <a class="logo" href="#inicio" aria-label="Proelectricos"><img class="mark" src="assets/icon.svg" alt="" width="38" height="38"><span>PRO<i>ELECTRICOS</i></span></a>
   <nav id="nav" aria-label="Principal">
+    <a href="#promociones" id="navPromo" data-i18n="nav_promo" hidden></a>
     <a href="#productos" data-i18n="nav_products"></a>
     <a href="#sistemas" data-i18n="nav_systems"></a>
+    <a href="#inversores" data-i18n="nav_inv"></a>
+    <a href="#guia" data-i18n="nav_guide"></a>
     <a href="#garantia" data-i18n="nav_warranty"></a>
     <a href="#contacto" data-i18n="nav_contact"></a>
   </nav>
@@ -29,44 +46,76 @@
 
 <main>
 <section class="hero" id="inicio">
-  <div class="wrap">
-    <p class="kicker" data-i18n="hero_kicker"></p>
-    <h1 data-i18n="hero_title"></h1>
-    <p class="lead" data-i18n="hero_text"></p>
-    <div class="cta">
-      <a class="btn" href="#productos" data-i18n="hero_cta1"></a>
-      <a class="btn ghost" id="waHero" href="#" target="_blank" rel="noopener" data-i18n="hero_cta2"></a>
-    </div>
+  <div class="slider" id="slider" aria-roledescription="carousel">
+    <div id="slides"></div>
+    <div class="dots" id="dots"></div>
   </div>
   <div class="stripe" aria-hidden="true"></div>
 </section>
 
-<section class="sec" id="productos">
+<section class="trust" aria-label="Proelectricos"><div class="wrap" id="trust"></div></section>
+
+<section class="sec dark" id="promociones" hidden>
+  <div class="wrap">
+    <h2 data-i18n="promo_title"></h2>
+    <p class="sub" data-i18n="promo_sub"></p>
+    <div class="grid g3" id="promos"></div>
+  </div>
+</section>
+
+<section class="sec" id="nosotros">
+  <div class="wrap two">
+    <div><h2 data-i18n="about_title"></h2><p data-i18n="about_text"></p></div>
+    <ul class="points" id="points"></ul>
+  </div>
+</section>
+
+<section class="sec alt" id="productos">
   <div class="wrap">
     <h2 data-i18n="prod_title"></h2>
     <p class="sub" data-i18n="prod_sub"></p>
-    <div class="grid" id="lineas"></div>
-    <h3 class="h3" data-i18n="pop_title"></h3>
-    <div class="grid g4" id="populares"></div>
+    <input class="search" id="search" type="search" autocomplete="off">
+    <div class="filters" id="filters" role="tablist"></div>
+    <div class="grid g4" id="catalogo"></div>
   </div>
 </section>
 
 <section class="sec dark" id="sistemas">
-  <div class="wrap two">
-    <article class="sys"><b>20V MAX* XR®</b><p data-i18n="sys_xr"></p></article>
-    <article class="sys"><b>FLEXVOLT 60V MAX*</b><p data-i18n="sys_flex"></p></article>
+  <div class="wrap">
+    <h2 data-i18n="sys_title"></h2>
+    <p class="sub" data-i18n="sys_sub"></p>
+    <div class="filters" id="sysTabs" role="tablist"></div>
+    <div class="syspanel" id="sysPanel" aria-live="polite"></div>
+    <p class="small" data-i18n="sys_note"></p>
   </div>
-  <div class="wrap"><p class="small" data-i18n="sys_note"></p></div>
 </section>
 
 <section class="sec" id="inversores">
-  <div class="wrap two">
-    <div><h2 data-i18n="inv_title"></h2><p data-i18n="inv_text"></p></div>
-    <div class="card"><h3 data-i18n="inv_card_t"></h3><p data-i18n="inv_card_d"></p><a class="btn" id="waInv" href="#" target="_blank" rel="noopener" data-i18n="inv_cta"></a></div>
+  <div class="wrap">
+    <h2 data-i18n="inv_title"></h2>
+    <p class="sub" data-i18n="inv_text"></p>
+    <div class="two calc">
+      <div id="loads" class="loads"></div>
+      <aside class="result" aria-live="polite">
+        <div class="ico-big" id="invIco"></div>
+        <p data-i18n="calc_total"></p><b id="rTotal">0 W</b>
+        <p data-i18n="calc_rec"></p><b class="big" id="rRec">—</b>
+        <p class="small" data-i18n="calc_note"></p>
+        <a class="btn" id="waInv" href="#" target="_blank" rel="noopener" data-i18n="inv_cta"></a>
+      </aside>
+    </div>
   </div>
 </section>
 
-<section class="sec dark" id="garantia">
+<section class="sec dark" id="guia">
+  <div class="wrap">
+    <h2 data-i18n="guide_title"></h2>
+    <p class="sub" data-i18n="guide_sub"></p>
+    <div class="acc" id="acc"></div>
+  </div>
+</section>
+
+<section class="sec" id="garantia">
   <div class="wrap two">
     <div>
       <h2 data-i18n="war_title"></h2>
@@ -76,37 +125,82 @@
     </div>
     <aside class="note"><h3 data-i18n="war_bring"></h3><ul id="requisitos"></ul></aside>
   </div>
+  <div class="wrap">
+    <form class="wform" id="wForm" novalidate>
+      <h3 data-i18n="form_title"></h3><p class="sub" data-i18n="form_sub"></p>
+      <div class="fgrid">
+        <label><span data-i18n="f_name"></span><input name="name" required autocomplete="name"></label>
+        <label><span data-i18n="f_phone"></span><input name="phone" required type="tel" autocomplete="tel"></label>
+        <label><span data-i18n="f_model"></span><input name="model" required placeholder="DWE4577-B3"></label>
+        <label><span data-i18n="f_serial"></span><input name="serial"></label>
+        <label class="full"><span data-i18n="f_issue"></span><textarea name="issue" rows="3" required></textarea></label>
+      </div>
+      <label class="check"><input type="checkbox" name="ok" required> <span><span data-i18n="f_consent"></span> <a href="privacidad.html" target="_blank" data-i18n="priv"></a></span></label>
+      <p class="err" id="wErr" role="alert" hidden></p>
+      <div class="cta"><button class="btn" type="submit" data-i18n="f_wa"></button><button class="btn ghost" type="button" id="wMail" data-i18n="f_mail"></button></div>
+    </form>
+  </div>
 </section>
 
-<section class="sec" id="servicio">
+<section class="sec dark" id="servicio">
   <div class="wrap">
     <h2 data-i18n="svc_title"></h2>
     <div class="grid g3" id="servicios"></div>
   </div>
 </section>
 
-<section class="sec dark" id="contacto">
+<section class="sec" id="contacto">
   <div class="wrap two">
     <div>
       <h2 data-i18n="con_title"></h2>
       <ul class="info" id="info"></ul>
       <div class="cta">
         <a class="btn" id="waBtn" href="#" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="btn ghost" id="dirBtn" href="#" target="_blank" rel="noopener" data-i18n="con_dir"></a>
         <a class="btn ghost" id="fbBtn" href="#" target="_blank" rel="noopener">Facebook</a>
         <a class="btn ghost" id="mailBtn" href="#" data-i18n="con_mail"></a>
       </div>
     </div>
     <iframe id="mapa" title="Map" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
   </div>
+  <div class="wrap">
+    <form class="wform" id="cForm" novalidate>
+      <h3 data-i18n="cform_title"></h3><p class="sub" data-i18n="cform_sub"></p>
+      <div class="fgrid">
+        <label><span data-i18n="f_name"></span><input name="name" required autocomplete="name"></label>
+        <label><span data-i18n="f_phone"></span><input name="phone" required type="tel" autocomplete="tel"></label>
+        <label><span data-i18n="c_email"></span><input name="email" type="email" autocomplete="email"></label>
+        <label><span data-i18n="c_topic"></span><select name="topic" id="cTopic"></select></label>
+        <label class="full"><span data-i18n="c_msg"></span><textarea name="msg" rows="4" required></textarea></label>
+      </div>
+      <label class="check"><input type="checkbox" name="ok" required> <span><span data-i18n="f_consent"></span> <a href="privacidad.html" target="_blank" data-i18n="priv"></a></span></label>
+      <p class="err" id="cErr" role="alert" hidden></p>
+      <div class="cta"><button class="btn" type="submit" data-i18n="f_wa"></button><button class="btn ghost" type="button" id="cMail" data-i18n="f_mail"></button></div>
+    </form>
+  </div>
 </section>
 </main>
 
 <footer>
   <div class="stripe" aria-hidden="true"></div>
-  <p>© <span id="year"></span> Proelectricos · Popayán, Cauca</p>
+  <div class="wrap fcols">
+    <div><img src="assets/logo.svg" alt="Proelectricos" width="220" height="50"><p class="small" id="ftAddr"></p></div>
+    <div><b data-i18n="ft_nav"></b><a href="#productos" data-i18n="nav_products"></a><a href="#inversores" data-i18n="nav_inv"></a><a href="#garantia" data-i18n="nav_warranty"></a><a href="#nosotros" data-i18n="about_title"></a><a href="#contacto" data-i18n="nav_contact"></a></div>
+    <div><b data-i18n="ft_follow"></b><a id="ftFb" href="#" target="_blank" rel="noopener">Facebook</a><a id="ftMail" href="#"></a><a href="https://www.dewalt.com.co/es-co" target="_blank" rel="noopener" data-i18n="ft_official"></a></div>
+    <div><b data-i18n="ft_legal"></b><a href="privacidad.html" data-i18n="priv"></a><a href="terminos.html" data-i18n="terms"></a></div>
+  </div>
+  <p>© <span id="year"></span> Proelectricos · Popayán, Cauca · NIT [completar]</p>
   <p class="small" data-i18n="legal"></p>
 </footer>
 
+<button class="qpill" id="qPill" hidden></button>
+<a class="wafab" id="waFab" href="#" target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp</a>
+<dialog id="qDlg" aria-labelledby="qTitle"><form method="dialog">
+  <h3 id="qTitle" data-i18n="q_title"></h3>
+  <ul class="qlist" id="qList"></ul><p id="qEmpty" data-i18n="q_empty"></p>
+  <div class="cta"><a class="btn" id="qSend" href="#" target="_blank" rel="noopener" data-i18n="q_send"></a><button class="btn ghost" type="button" id="qClear" data-i18n="q_clear"></button><button class="btn ghost" data-i18n="q_close"></button></div>
+</form></dialog>
+<button class="totop" id="toTop" aria-label="Top" hidden>↑</button>
 <button class="chat-fab" id="chatFab" data-i18n="chat_fab"></button>
 <section class="chat" id="chat" hidden aria-label="Chat">
   <header><strong data-i18n="chat_title"></strong><button id="chatClose" aria-label="Close">✕</button></header>
@@ -115,6 +209,7 @@
   <form id="chatForm"><input id="chatInput" autocomplete="off"><button class="btn" data-i18n="chat_send"></button></form>
 </section>
 
+<script src="js/icons.js"></script>
 <script src="js/data.js"></script>
 <script src="js/app.js"></script>
 </body>
