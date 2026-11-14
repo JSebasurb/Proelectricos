@@ -31,7 +31,7 @@ function render(){
   $("dirBtn").href = "https://www.google.com/maps/dir/?api=1&destination="+encodeURIComponent(NEGOCIO.direccion);
   renderQuote(); renderPromos();
   $("cTopic").innerHTML = TOPICS[lang].map(x=>`<option>${x}</option>`).join("");
-  $("chatInput").placeholder = t.chat_ph;
+  $("chatInput").placeholder = t.chat_ph; $("micBtn").setAttribute("aria-label",t.mic);
   $("chips").innerHTML = t.sug.map(s=>`<button type="button">${s}</button>`).join("");
 }
 
@@ -57,14 +57,20 @@ function renderCatalog(){
   const t=T(), cats=["all","drill","grinder","saw","hammer"];
   $("filters").innerHTML = cats.map(c=>`<button role="tab" aria-selected="${c===filter}" data-f="${c}">${t["f_"+c]}</button>`).join("");
   $("search").placeholder = t.search_ph;
-  const n=s=>s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"");
-  const list = PRODUCTOS.filter(p=>(filter==="all"||p.c===filter) && (!q || n(p.s+" "+p[lang]).includes(n(q))));
+  const ranked = q ? smartSearch(q,lang) : PRODUCTOS;
+  const list = ranked.filter(p=>filter==="all"||p.c===filter);
+  $("ideas").innerHTML = q ? `<span>${t.results_for} «${q}»</span><button type="button" data-idea="">${t.clear_s}</button>` : t.ideas.map(i=>`<button type="button" data-idea="${i}">${i}</button>`).join("");
   $("catalogo").innerHTML = list.length ? list.map(p=>`
-   <article class="card prod"><div class="pic">${ICONS[p.ico]}</div><span class="sku">${p.s}</span><h3>${p[lang]}</h3>
+   <article class="card prod">${q&&p===list[0]?`<span class="best">${t.best}</span>`:""}<div class="pic">${ICONS[p.ico]}</div><span class="sku">${p.s}</span><h3>${p[lang]}</h3>
    <div class="pact"><button class="btn sm" data-add="${p.s}">${quote[p.s]?t.added:t.add_q}</button><a class="more" href="${p.u}" target="_blank" rel="noopener">${t.sheet}</a></div></article>`).join("")
    : `<p class="empty">${t.no_results}</p>`;
 }
 $("search").oninput=e=>{ q=e.target.value.trim(); renderCatalog(); };
+$("ideas").onclick=e=>{ if(e.target.dataset.idea===undefined) return; q=e.target.dataset.idea; $("search").value=q; renderCatalog(); };
+const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+if(SR){ $("micBtn").hidden=false; $("micBtn").onclick=()=>{ const r=new SR(); r.lang=lang==="es"?"es-CO":"en-US";
+  $("micBtn").classList.add("on"); r.onend=()=>$("micBtn").classList.remove("on");
+  r.onresult=e=>{ q=e.results[0][0].transcript; $("search").value=q; renderCatalog(); }; try{r.start()}catch(_){} }; }
 $("catalogo").onclick=e=>{ const s=e.target.dataset.add; if(!s) return; quote[s]=(quote[s]||0)+1; renderQuote(); e.target.textContent=T().added; };
 
 // Lista de cotización
@@ -136,7 +142,9 @@ function say(txt, who){
 function responder(q){
   const n = " "+norm(q)+" ";
   const hit = T().faq.find(f => f.k.some(w => n.includes(norm(w))));
-  return hit ? hit.r : T().chat_unk;
+  if(hit) return hit.r;
+  const rec = smartSearch(q,lang).slice(0,3);
+  return rec.length ? T().chat_rec+"\n"+rec.map(p=>`• ${p[lang]} (${p.s})`).join("\n") : T().chat_unk;
 }
 function ask(q){
   if(!q.trim()) return;

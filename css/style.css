@@ -222,3 +222,17 @@ nav{gap:18px}
 #contacto .wform input:not([type=checkbox]),#contacto .wform textarea,#contacto .wform select{background:#fff;color:var(--k)}
 #contacto .wform .err{color:#ff8a8a}
 @media(max-width:980px){.promo .btn{align-self:stretch;text-align:center}}
+
+/* v7 búsqueda inteligente */
+.searchrow{display:flex;gap:8px;align-items:center;max-width:520px;margin-bottom:10px}
+.searchrow .search{margin:0;flex:1}
+.mic{width:46px;height:46px;border-radius:50%;border:2px solid var(--k);background:var(--y);font-size:1.2rem;cursor:pointer}
+.mic.on{background:#e53935;animation:pulse 1s infinite}
+@keyframes pulse{50%{transform:scale(1.12)}}
+.ideas{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:16px}
+.ideas span{font-weight:600}
+.ideas button{border:2px dashed var(--k);background:transparent;border-radius:30px;padding:4px 12px;font:600 .95rem Barlow,sans-serif;cursor:pointer}
+.ideas button:hover{background:var(--y);border-style:solid}
+.best{position:absolute;top:-12px;right:12px;background:var(--k);color:var(--y);font:800 1rem 'Barlow Condensed',sans-serif;padding:2px 12px;border-radius:20px}
+.card.prod{position:relative}
+@media(prefers-reduced-motion:reduce){.mic.on{animation:none}}

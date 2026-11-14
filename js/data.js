@@ -291,3 +291,14 @@ Object.assign(I18N.en,{
  cform_title:"Write to us", cform_sub:"Tell us what you need and we'll reply by WhatsApp or email.",
  c_email:"Email (optional)", c_topic:"Topic", c_msg:"Message", cf_head:"Inquiry from the website"
 });
+
+Object.assign(I18N.es,{
+ search_ph:"¿Qué necesitas hacer? Ej: perforar concreto", best:"Mejor opción", mic:"Buscar por voz", results_for:"Resultados para", clear_s:"Ver todo",
+ ideas:["Cortar baldosa","Perforar concreto","Atornillar","Cortar madera","Demoler piso","Pulir metal"],
+ chat_rec:"Para eso te pueden servir:"
+});
+Object.assign(I18N.en,{
+ search_ph:"What do you need to do? E.g. drill concrete", best:"Best match", mic:"Voice search", results_for:"Results for", clear_s:"Show all",
+ ideas:["Cut tile","Drill concrete","Drive screws","Cut wood","Demolish floor","Polish metal"],
+ chat_rec:"These could work for that:"
+});

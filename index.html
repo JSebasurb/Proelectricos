@@ -74,7 +74,8 @@
   <div class="wrap">
     <h2 data-i18n="prod_title"></h2>
     <p class="sub" data-i18n="prod_sub"></p>
-    <input class="search" id="search" type="search" autocomplete="off">
+    <div class="searchrow"><input class="search" id="search" type="search" autocomplete="off"><button type="button" id="micBtn" class="mic" hidden aria-label="Voz">🎤</button></div>
+    <div class="ideas" id="ideas"></div>
     <div class="filters" id="filters" role="tablist"></div>
     <div class="grid g4" id="catalogo"></div>
   </div>
@@ -211,6 +212,7 @@
 
 <script src="js/icons.js"></script>
 <script src="js/data.js"></script>
+<script src="js/search.js"></script>
 <script src="js/app.js"></script>
 </body>
 </html>

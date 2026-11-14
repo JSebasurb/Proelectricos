@@ -22,3 +22,6 @@ Estructura por capas:
 
 ## Promociones
 Edita `PROMOS` en js/data.js: título, descripción, badge, ícono (drill, grinder, saw, hammer, battery, inverter) y fecha `hasta`. Las vencidas se ocultan solas; sin vigentes, la sección desaparece.
+
+## Búsqueda inteligente
+js/search.js entiende tareas ("cortar baldosa"), sinónimos ES/EN y errores de tipeo. Al agregar un producto nuevo en PRODUCTOS, añade sus palabras en TAGS (por categoría o por referencia) para que la búsqueda lo encuentre.
