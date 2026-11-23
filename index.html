@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Proelectricos Popayán | Centro de servicio autorizado DEWALT</title>
+<meta name="description" content="Herramienta eléctrica DEWALT, inversores y centro de servicio autorizado DEWALT en Popayán. Calle 4 #21C-14.">
+<meta name="theme-color" content="#FFC20E">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/icon-32.png" type="image/png" sizes="32x32">
+<link rel="icon" href="assets/icon-16.png" type="image/png" sizes="16x16">
+<link rel="apple-touch-icon" href="assets/icon-180.png">
+<link rel="manifest" href="manifest.webmanifest">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Proelectricos Popayán | Centro de servicio autorizado DEWALT">
+<meta property="og:description" content="Herramienta eléctrica DEWALT, inversores y servicio autorizado en Popayán. Calle 4 #21C-14.">
+<meta property="og:locale" content="es_CO">
+<meta property="og:image" content="assets/logo.svg">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HardwareStore","name":"Proelectricos","description":"Herramienta eléctrica DEWALT, inversores y centro de servicio autorizado DEWALT en Popayán.","email":"proelectricospopayan@hotmail.com","address":{"@type":"PostalAddress","streetAddress":"Calle 4 #21C-14","addressLocality":"Popayán","addressRegion":"Cauca","addressCountry":"CO"},"sameAs":["https://www.facebook.com/share/1E17P7FDqw/"]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip" href="#productos" data-i18n="skip"></a>
+<div class="aviso" id="aviso" hidden><span class="tag">!</span><span id="avisoTxt"></span><button id="avisoX" type="button" aria-label="✕">✕</button></div>
+<header class="top">
+  <a class="logo" href="#inicio" aria-label="Proelectricos"><img class="mark" src="assets/icon.svg" alt="" width="38" height="38"><span>PRO<i>ELECTRICOS</i></span></a>
+  <nav id="nav" aria-label="Principal">
+    <a href="#inicio" data-v="inicio" data-i18n="nav_home"></a>
+    <a href="#catalogo" data-v="catalogo" data-i18n="nav_catalog"></a>
+    <a href="#repuestos" data-v="repuestos" data-i18n="nav_rep"></a>
+    <a href="#garantias" data-v="garantias" data-i18n="nav_wty"></a>
+    <a href="#blog" data-v="blog" data-i18n="nav_blog"></a>
+    <a href="#contacto" data-v="contacto" data-i18n="nav_contact"></a>
+  </nav>
+  <div class="tools">
+    <div class="lang" role="group" aria-label="Idioma / Language">
+      <button data-lang="es" aria-pressed="true">ES</button><button data-lang="en" aria-pressed="false">EN</button>
+    </div>
+    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<main>
+<div class="view" data-view="inicio">
+<section class="hero" id="inicio">
+  <div class="slider" id="slider" aria-roledescription="carousel">
+    <div id="slides"></div>
+    <div class="dots" id="dots"></div>
+  </div>
+  <div class="stripe" aria-hidden="true"></div>
+</section>
+
+<section class="trust" aria-label="Proelectricos"><div class="wrap" id="trust"></div></section>
+
+<section class="sec" id="info-importante"><div class="wrap"><h2 data-i18n="info_title"></h2><p class="sub" data-i18n="info_sub"></p><div class="grid g4" id="homeInfo"></div></div></section>
+
+<section class="sec alt" id="home-repuestos"><div class="wrap two">
+  <div><h2 data-i18n="rep_home_title"></h2><p data-i18n="rep_home_text"></p><div class="cta"><a class="btn" href="#repuestos" data-i18n="rep_home_cta"></a></div></div>
+  <div class="partsrow" id="homePartsRow"></div>
+</div></section>
+
+<section class="sec dark" id="promociones" hidden>
+  <div class="wrap">
+    <h2 data-i18n="promo_title"></h2>
+    <p class="sub" data-i18n="promo_sub"></p>
+    <div class="grid g3" id="promos"></div>
+  </div>
+</section>
+
+<section class="sec alt" id="publicaciones" hidden>
+  <div class="wrap">
+    <h2 data-i18n="posts_title"></h2>
+    <p class="sub" data-i18n="posts_sub"></p>
+    <div class="filters" id="postFilters" role="tablist"></div>
+    <div class="grid g3 posts" id="postGrid"></div>
+    <p><button class="btn ghost" id="postMore" type="button" data-i18n="more_posts" hidden></button></p>
+  </div>
+</section>
+
+<section class="sec dark" id="cats-home"><div class="wrap"><h2 data-i18n="home_cats_title"></h2><p class="sub" data-i18n="home_cats_sub"></p><div class="cats" id="catTilesHome"></div></div></section>
+
+<section class="sec" id="home-recs"><div class="wrap"><h2 data-i18n="home_recs_title"></h2><p class="sub" data-i18n="home_recs_sub"></p><div class="grid g3" id="homeRecs"></div><p><a class="btn ghost" href="#blog" data-i18n="home_recs_cta"></a></p></div></section>
+
+
+
+<section class="sec" id="nosotros">
+  <div class="wrap two">
+    <div><h2 data-i18n="about_title"></h2><p data-i18n="about_text"></p></div>
+    <ul class="points" id="points"></ul>
+  </div>
+</section>
+
+<section class="sec" id="videos" hidden><div class="wrap"><h2 data-i18n="vid_title"></h2><div class="grid g3" id="vidGrid"></div></div></section>
+
+<section class="sec alt" id="resenas" hidden><div class="wrap"><h2 data-i18n="rev_title"></h2><div class="grid g3" id="revGrid"></div></div></section>
+</div>
+
+<div class="view" data-view="catalogo" hidden>
+<header class="pagehead"><div class="wrap"><h1 data-i18n="pg_cat_t"></h1><p data-i18n="pg_cat_d"></p></div></header>
+<nav class="subnav" aria-label="Catálogo"><div class="wrap"><a href="#productos" data-i18n="sub_products"></a><a href="#inteligente" data-i18n="sub_ai"></a><a href="#sistemas" data-i18n="sub_batt"></a><a href="#inversores" data-i18n="sub_inv"></a><a href="#calibres" data-i18n="sub_wire"></a><a href="#guia" data-i18n="sub_faq"></a></div></nav>
+<section class="sec" id="categorias"><div class="wrap"><h2 data-i18n="cat_title"></h2><p class="sub" data-i18n="cat_sub"></p><div class="cats" id="catTiles"></div></div></section>
+<section class="sec alt" id="productos">
+  <div class="wrap">
+    <h2 data-i18n="prod_title"></h2>
+    <p class="sub" data-i18n="prod_sub"></p>
+    <div class="searchrow"><input class="search" id="search" type="search" autocomplete="off"><button type="button" id="micBtn" class="mic" hidden aria-label="Voz">🎤</button></div>
+    <div class="ideas" id="ideas"></div>
+    <div class="filters" id="filters" role="tablist"></div>
+    <div class="grid g4" id="catalogo"></div>
+  </div>
+</section>
+<section class="sec smart" id="inteligente">
+  <div class="wrap">
+    <div class="devbar"><div><span class="tag">BETA</span><span data-i18n="dev_note"></span></div></div>
+    <h2 data-i18n="smart_title"></h2>
+    <p class="sub" data-i18n="smart_sub"></p>
+    <div class="filters" id="smartTabs" role="tablist"></div>
+
+    <div id="paneLens" class="lens">
+      <div class="viewfinder" id="vf">
+        <video id="cam" playsinline muted hidden></video>
+        <canvas id="snap" hidden></canvas>
+        <div class="vf-empty" id="vfEmpty">
+          <svg viewBox="0 0 64 64" width="64" aria-hidden="true"><path d="M8 20h10l4-6h20l4 6h10v30H8z" fill="none" stroke="#FFC20E" stroke-width="3" stroke-linejoin="round"/><circle cx="32" cy="35" r="9" fill="none" stroke="#FFC20E" stroke-width="3"/></svg>
+          <p data-i18n="cam_empty"></p>
+        </div>
+        <i class="c tl"></i><i class="c tr"></i><i class="c bl"></i><i class="c br"></i>
+        <div class="scan" id="scan" hidden></div>
+      </div>
+      <div class="lens-side">
+        <div class="cta">
+          <button class="btn" id="camBtn" type="button" data-i18n="cam_open"></button>
+          <button class="btn" id="shotBtn" type="button" data-i18n="cam_shot" hidden></button>
+          <label class="btn ghost" for="fileIn" data-i18n="cam_file"></label>
+          <input type="file" id="fileIn" accept="image/*" capture="environment" hidden>
+        </div>
+        <p class="status" id="lensStatus" aria-live="polite"></p>
+        <progress id="lensProg" max="1" value="0" hidden></progress>
+        <details id="lensText" hidden><summary data-i18n="ocr_text"></summary><pre id="ocrOut"></pre></details>
+        <form id="lensManual" class="searchrow"><input id="lensIn" class="search" autocomplete="off"><button class="btn sm" data-i18n="lens_go"></button></form>
+        <div id="lensResults" class="minis"></div>
+        <p class="small" data-i18n="lens_priv"></p>
+      </div>
+    </div>
+
+    <div id="paneGuide" class="guide" hidden></div>
+
+    <div id="paneList" class="guide" hidden>
+      <h3 data-i18n="list_title"></h3><p class="status" data-i18n="list_sub"></p>
+      <textarea id="listIn" rows="5" class="listin"></textarea>
+      <div class="cta"><button class="btn" id="listGo" type="button" data-i18n="list_go"></button></div>
+      <div id="listOut"></div>
+    </div>
+
+    <div id="paneAI" class="aibox" hidden>
+      <div class="aihead"><div class="avatar" aria-hidden="true">⚡</div><div><b data-i18n="ai_title"></b><small id="aiMode"></small></div><span class="tag">BETA</span></div>
+      <div class="aimsgs" id="aiMsgs" aria-live="polite"></div>
+      <div class="ideas" id="aiChips"></div>
+      <form class="aiform" id="aiForm"><input id="aiInput" autocomplete="off"><button class="btn" data-i18n="ai_send"></button></form>
+    </div>
+  </div>
+</section>
+<div class="stripe" aria-hidden="true" style="margin:0"></div>
+<section class="sec dark" id="sistemas">
+  <div class="wrap">
+    <h2 data-i18n="sys_title"></h2>
+    <p class="sub" data-i18n="sys_sub"></p>
+    <div class="filters" id="sysTabs" role="tablist"></div>
+    <div class="syspanel" id="sysPanel" aria-live="polite"></div>
+    <p class="small" data-i18n="sys_note"></p>
+  </div>
+</section>
+<section class="sec" id="inversores">
+  <div class="wrap">
+    <h2 data-i18n="inv_title"></h2>
+    <p class="sub" data-i18n="inv_text"></p>
+    <div class="two calc">
+      <div id="loads" class="loads"></div>
+      <aside class="result" aria-live="polite">
+        <div class="ico-big" id="invIco"></div>
+        <p data-i18n="calc_total"></p><b id="rTotal">0 W</b>
+        <p data-i18n="calc_rec"></p><b class="big" id="rRec">—</b>
+        <p class="small" data-i18n="calc_note"></p>
+        <a class="btn" id="waInv" href="#" target="_blank" rel="noopener" data-i18n="inv_cta"></a>
+      </aside>
+    </div>
+  </div>
+</section>
+<section class="sec alt" id="calibres"><div class="wrap">
+  <h2 data-i18n="wire_title"></h2><p class="sub" data-i18n="wire_sub"></p>
+  <div class="wirecalc"><label><span data-i18n="wire_amps"></span><input id="wireAmps" type="number" min="0" step="0.1" inputmode="decimal"></label><p id="wireOut" class="wireout" aria-live="polite"></p></div>
+  <div class="cmpwrap"><table id="wireTable" class="wtable"></table></div>
+  <p class="small" data-i18n="wire_note"></p>
+</div></section>
+<section class="sec dark" id="guia">
+  <div class="wrap">
+    <h2 data-i18n="guide_title"></h2>
+    <p class="sub" data-i18n="guide_sub"></p>
+    <div class="acc" id="acc"></div>
+  </div>
+</section>
+</div>
+
+<div class="view" data-view="repuestos" hidden>
+<header class="pagehead"><div class="wrap"><h1 data-i18n="pg_rep_t"></h1><p data-i18n="pg_rep_d"></p></div></header>
+<section class="sec" id="rep-servicios"><div class="wrap"><h2 data-i18n="rep_serv_title"></h2><p class="sub" data-i18n="rep_serv_sub"></p><div class="grid g4" id="repServ"></div></div></section>
+<section class="sec alt" id="rep-buscador"><div class="wrap"><h2 data-i18n="rep_find_title"></h2><p class="sub" data-i18n="rep_find_sub"></p>
+  <div class="filters" id="repTools" role="tablist"></div><div class="grid g4" id="repParts"></div></div></section>
+<section class="sec" id="rep-solicitud"><div class="wrap">
+  <form class="wform" id="rForm" novalidate>
+    <h3 data-i18n="rep_form_title"></h3><p class="sub" data-i18n="rep_form_sub"></p>
+    <div class="fgrid">
+      <label><span data-i18n="f_name"></span><input name="name" required autocomplete="name"></label>
+      <label><span data-i18n="f_phone"></span><input name="phone" required type="tel" autocomplete="tel"></label>
+      <label><span data-i18n="rep_f_type"></span><select name="type" id="rType"></select></label>
+      <label><span data-i18n="rep_f_tool"></span><select name="tool" id="rTool"></select></label>
+      <label><span data-i18n="rep_f_brand"></span><input name="brand"></label>
+      <label><span data-i18n="rep_f_model"></span><input name="model"></label>
+      <label class="full"><span data-i18n="rep_f_parts"></span><input name="parts" id="rParts" readonly></label>
+      <label class="full"><span data-i18n="rep_f_issue"></span><textarea name="issue" rows="3"></textarea></label>
+    </div>
+    <p class="small" data-i18n="rep_photo"></p>
+    <label class="check"><input type="checkbox" name="ok" required> <span><span data-i18n="f_consent"></span> <a href="privacidad.html" target="_blank" data-i18n="priv"></a></span></label>
+    <p class="err" id="rErr" role="alert" hidden></p>
+    <div class="cta"><button class="btn" type="submit" data-i18n="f_wa"></button><button class="btn ghost" type="button" id="rMail" data-i18n="f_mail"></button><a class="btn ghost" href="#garantia" data-i18n="ic_go_warr"></a></div>
+  </form>
+</div></section>
+<section class="sec alt" id="rep-faq"><div class="wrap"><h2 data-i18n="warr_faq_title"></h2><div class="acc" id="repAcc"></div></div></section>
+</div>
+
+<div class="view" data-view="garantias" hidden>
+<header class="pagehead"><div class="wrap"><h1 data-i18n="pg_warr_t"></h1><p data-i18n="pg_warr_d"></p></div></header>
+<section class="sec" id="garantia">
+  <div class="wrap two">
+    <div>
+      <h2 data-i18n="war_title"></h2>
+      <p data-i18n="war_text"></p>
+      <ol class="steps" id="pasos"></ol>
+      <a class="btn ghost" href="https://www.dewalt.com.co/es-co/soporte/informacion-de-garantia" target="_blank" rel="noopener" data-i18n="war_link"></a>
+    </div>
+    <aside class="note"><h3 data-i18n="war_bring"></h3><ul id="requisitos"></ul></aside>
+  </div>
+  <div class="wrap">
+    <div class="wform trk">
+      <h3 data-i18n="trk_title"></h3><p class="sub" data-i18n="trk_sub"></p>
+      <form id="trkForm" class="searchrow"><input id="trkIn" class="search" autocomplete="off"><button class="btn sm" data-i18n="trk_go"></button></form>
+      <div id="trkOut" aria-live="polite"></div>
+      <p class="small" data-i18n="trk_priv"></p>
+    </div>
+    <form class="wform" id="wForm" novalidate>
+      <h3 data-i18n="form_title"></h3><p class="sub" data-i18n="form_sub"></p>
+      <div class="fgrid">
+        <label><span data-i18n="f_name"></span><input name="name" required autocomplete="name"></label>
+        <label><span data-i18n="f_phone"></span><input name="phone" required type="tel" autocomplete="tel"></label>
+        <label><span data-i18n="f_model"></span><input name="model" required placeholder="DWE4577-B3"></label>
+        <label><span data-i18n="f_serial"></span><input name="serial"></label>
+        <label><span data-i18n="f_date"></span><input name="date" type="date"></label>
+        <label><span data-i18n="f_slot"></span><select name="slot" id="slot"></select></label>
+        <label class="full"><span data-i18n="f_issue"></span><textarea name="issue" rows="3" required></textarea></label>
+      </div>
+      <label class="check"><input type="checkbox" name="ok" required> <span><span data-i18n="f_consent"></span> <a href="privacidad.html" target="_blank" data-i18n="priv"></a></span></label>
+      <p class="err" id="wErr" role="alert" hidden></p>
+      <div class="cta"><button class="btn" type="submit" data-i18n="f_wa"></button><button class="btn ghost" type="button" id="wMail" data-i18n="f_mail"></button></div>
+    </form>
+  </div>
+</section>
+<section class="sec alt" id="garantia-faq"><div class="wrap"><h2 data-i18n="warr_faq_title"></h2><div class="acc" id="warrAcc"></div></div></section>
+<section class="sec dark" id="servicio">
+  <div class="wrap">
+    <h2 data-i18n="svc_title"></h2>
+    <div class="grid g3" id="servicios"></div>
+  </div>
+</section>
+</div>
+
+<div class="view" data-view="blog" id="view-blog" hidden>
+<header class="pagehead"><div class="wrap"><h1 data-i18n="pg_blog_t"></h1><p data-i18n="pg_blog_d"></p></div></header>
+<div id="blogList">
+  <section class="sec" id="blog-featured"><div class="wrap" id="blogFeatured"></div></section>
+  <section class="sec dark" id="blog-recs"><div class="wrap"><h2 data-i18n="blog_recs_title"></h2><p class="sub" data-i18n="blog_recs_sub"></p><div class="grid g3" id="blogRecs"></div></div></section>
+  <section class="sec alt" id="blog-kits"><div class="wrap"><h2 data-i18n="blog_kits_title"></h2><p class="sub" data-i18n="blog_kits_sub"></p><div class="grid kits" id="blogKits"></div></div></section>
+  <section class="sec" id="blog"><div class="wrap">
+    <h2 data-i18n="blog_guides_title"></h2><p class="sub" data-i18n="blog_sub"></p>
+    <div class="filters" id="blogTypes" role="tablist"></div>
+    <div class="filters" id="blogFilters" role="tablist"></div>
+    <div class="grid g3" id="blogGrid"></div>
+    <h2 style="margin-top:48px" data-i18n="blog_uses_title"></h2>
+    <div class="cmpwrap"><table id="blogUses" class="wtable"></table></div>
+  </div></section>
+</div>
+<section class="sec" id="blogRead" hidden><div class="wrap"><article id="blogArticle" class="article"></article></div></section>
+</div>
+
+<div class="view" data-view="contacto" hidden>
+<header class="pagehead"><div class="wrap"><h1 data-i18n="pg_contact_t"></h1><p data-i18n="pg_contact_d"></p></div></header>
+<section class="sec" id="contacto">
+  <div class="wrap two">
+    <div>
+      <h2 data-i18n="con_title"></h2>
+      <ul class="info" id="info"></ul>
+      <div class="cta">
+        <a class="btn" id="waBtn" href="#" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="btn ghost" id="dirBtn" href="#" target="_blank" rel="noopener" data-i18n="con_dir"></a>
+        <a class="btn ghost" id="fbBtn" href="#" target="_blank" rel="noopener">Facebook</a>
+        <a class="btn ghost" id="mailBtn" href="#" data-i18n="con_mail"></a>
+        <span id="revBtns" style="display:contents"></span>
+      </div>
+    </div>
+    <iframe id="mapa" title="Map" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+  <div class="wrap">
+    <form class="wform" id="cForm" novalidate>
+      <h3 data-i18n="cform_title"></h3><p class="sub" data-i18n="cform_sub"></p>
+      <div class="fgrid">
+        <label><span data-i18n="f_name"></span><input name="name" required autocomplete="name"></label>
+        <label><span data-i18n="f_phone"></span><input name="phone" required type="tel" autocomplete="tel"></label>
+        <label><span data-i18n="c_email"></span><input name="email" type="email" autocomplete="email"></label>
+        <label><span data-i18n="c_topic"></span><select name="topic" id="cTopic"></select></label>
+        <label class="full"><span data-i18n="c_msg"></span><textarea name="msg" rows="4" required></textarea></label>
+      </div>
+      <label class="check"><input type="checkbox" name="ok" required> <span><span data-i18n="f_consent"></span> <a href="privacidad.html" target="_blank" data-i18n="priv"></a></span></label>
+      <p class="err" id="cErr" role="alert" hidden></p>
+      <div class="cta"><button class="btn" type="submit" data-i18n="f_wa"></button><button class="btn ghost" type="button" id="cMail" data-i18n="f_mail"></button></div>
+    </form>
+  </div>
+</section>
+</div>
+</main>
+
+<footer>
+  <div class="stripe" aria-hidden="true"></div>
+  <div class="wrap fcols">
+    <div><img src="assets/logo.svg" alt="Proelectricos" width="220" height="50"><p class="small" id="ftAddr"></p></div>
+    <div><b data-i18n="ft_nav"></b><a href="#inicio" data-i18n="nav_home"></a><a href="#catalogo" data-i18n="nav_catalog"></a><a href="#repuestos" data-i18n="nav_rep"></a><a href="#garantias" data-i18n="nav_wty"></a><a href="#blog" data-i18n="nav_blog"></a><a href="#contacto" data-i18n="nav_contact"></a></div>
+    <div><b data-i18n="ft_follow"></b><a id="ftFb" href="#" target="_blank" rel="noopener">Facebook</a><a id="ftMail" href="#"></a><a href="https://www.dewalt.com.co/es-co" target="_blank" rel="noopener" data-i18n="ft_official"></a></div>
+    <div><b data-i18n="ft_legal"></b><a href="privacidad.html" data-i18n="priv"></a><a href="terminos.html" data-i18n="terms"></a></div>
+  </div>
+  <p><button class="btn sm" id="installBtn" type="button" data-i18n="install" hidden></button> <button class="btn ghost sm" id="qrBtn" type="button" data-i18n="qr_open"></button></p>
+  <p>© <span id="year"></span> Proelectricos · Popayán, Cauca · NIT [completar]</p>
+  <p class="small" data-i18n="legal"></p>
+</footer>
+
+<button class="qpill" id="qPill" hidden></button>
+<button class="qpill cmp" id="cmpPill" hidden></button>
+<dialog id="cmpDlg" aria-labelledby="cmpTitle"><form method="dialog">
+  <h3 id="cmpTitle" data-i18n="cmp_title"></h3>
+  <div class="cmpwrap"><table id="cmpTable"></table></div>
+  <div class="cta"><button class="btn ghost" type="button" id="cmpClear" data-i18n="cmp_clear"></button><button class="btn ghost" data-i18n="q_close"></button></div>
+</form></dialog>
+<dialog id="qrDlg" aria-labelledby="qrT"><form method="dialog"><h3 id="qrT" data-i18n="qr_title"></h3><div id="qrBox" class="qrbox"></div><p class="small" id="qrUrl"></p>
+  <div class="cta"><button class="btn" type="button" id="qrPrint" data-i18n="qr_print"></button><button class="btn ghost" data-i18n="q_close"></button></div></form></dialog>
+<div id="printDoc" class="printdoc" aria-hidden="true"></div>
+<a class="wafab" id="waFab" href="#" target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp</a>
+<dialog id="qDlg" aria-labelledby="qTitle"><form method="dialog">
+  <h3 id="qTitle" data-i18n="q_title"></h3>
+  <ul class="qlist" id="qList"></ul><p id="qEmpty" data-i18n="q_empty"></p>
+  <div class="cta"><a class="btn" id="qSend" href="#" target="_blank" rel="noopener" data-i18n="q_send"></a><button class="btn ghost" type="button" id="qClear" data-i18n="q_clear"></button><button class="btn ghost" type="button" id="qPrint" data-i18n="q_print"></button><button class="btn ghost" data-i18n="q_close"></button></div>
+</form></dialog>
+<button class="totop" id="toTop" aria-label="Top" hidden>↑</button>
+<button class="chat-fab" id="chatFab" data-i18n="chat_fab"></button>
+<section class="chat" id="chat" hidden aria-label="Chat">
+  <header><strong data-i18n="chat_title"></strong><button id="chatClose" aria-label="Close">✕</button></header>
+  <div class="msgs" id="msgs" aria-live="polite"></div>
+  <div class="chips" id="chips"></div>
+  <form id="chatForm"><input id="chatInput" autocomplete="off"><button class="btn" data-i18n="chat_send"></button></form>
+</section>
+
+<script src="js/icons.js"></script>
+<script src="js/data.js"></script>
+<script src="js/search.js"></script>
+<script src="js/lens.js"></script>
+<script src="js/asistente.js"></script>
+<script src="js/guia.js"></script>
+<script src="js/fuentes.js"></script>
+<script src="js/lista.js"></script>
+<script src="js/articulos.js"></script>
+<script src="js/app.js"></script>
+<script src="js/smart.js"></script>
+<script src="js/extras.js"></script>
+<script src="js/v10.js"></script>
+<script src="js/posts.js"></script>
+<script src="js/catalogo-ui.js"></script>
+<script src="js/blog.js"></script>
+<script src="js/repuestos.js"></script>
+<script src="js/router.js"></script>
+</body>
+</html>
