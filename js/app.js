@@ -1,9 +1,13 @@
 // CAPA 3 · PRESENTACIÓN: pinta la página, cambia idioma y corre el chatbot.
-const $ = id => document.getElementById(id);
+const STUB={};
+const $ = id => document.getElementById(id) || (STUB[id] || (STUB[id]=document.createElement("div"))); // seguro si la vista no tiene ese elemento
+function catOf(id){ return CATEGORIAS.find(c=>c.id===id); }
+function catLabel(id){ const c=catOf(id); return c?c.n[lang]:id; }
 let lang = (localStorage.getItem("lang") || (navigator.language||"es").slice(0,2)) === "en" ? "en" : "es";
 const T = () => I18N[lang];
 const wa = txt => `https://wa.me/${NEGOCIO.whatsapp}?text=${encodeURIComponent(txt || T().wa_default)}`;
 
+var cmp=[];
 let filter="all", sysIdx=1, slideIdx=0, timer, loadQty={};
 function render(){
   const t = T();
@@ -29,7 +33,8 @@ function render(){
   $("trust").innerHTML = t.trust.map(x=>`<span>✔ ${x}</span>`).join("");
   $("waFab").href = wa();
   $("dirBtn").href = "https://www.google.com/maps/dir/?api=1&destination="+encodeURIComponent(NEGOCIO.direccion);
-  renderQuote(); renderPromos();
+  renderQuote(); renderPromos(); if(typeof renderSmart==="function") renderSmart(); if(typeof renderExtras==="function") renderExtras(); if(typeof renderV10==="function") renderV10(); if(typeof renderPosts==="function") renderPosts();
+  ["renderRepuestos","renderCats","renderHomeInfo","renderWire","renderBlog","renderRouter"].forEach(n=>{ if(typeof window[n]==="function") window[n](); });
   $("cTopic").innerHTML = TOPICS[lang].map(x=>`<option>${x}</option>`).join("");
   $("chatInput").placeholder = t.chat_ph; $("micBtn").setAttribute("aria-label",t.mic);
   $("chips").innerHTML = t.sug.map(s=>`<button type="button">${s}</button>`).join("");
@@ -37,12 +42,13 @@ function render(){
 
 // Hero slider
 function renderSlides(){
-  const t=T();
-  $("slides").innerHTML = t.slides.map((s,i)=>`<div class="slide${i===slideIdx?" on":""}"><div class="wrap sl"><div><p class="kicker">${t.hero_kicker}</p><h1>${s.t}</h1><p class="lead">${s.d}</p><div class="cta"><a class="btn" href="${s.href}">${s.cta}</a><a class="btn ghost" href="${wa()}" target="_blank" rel="noopener">${t.hero_cta2}</a></div></div><div class="art">${ICONS[s.ico]}</div></div></div>`).join("");
-  $("dots").innerHTML = t.slides.map((s,i)=>`<button aria-label="${i+1}" aria-current="${i===slideIdx}" data-i="${i}"></button>`).join("");
+  const t=T(), S = typeof allSlides==="function" ? allSlides() : t.slides;
+  if(slideIdx>=S.length) slideIdx=0;
+  $("slides").innerHTML = S.map((s,i)=>`<div class="slide${i===slideIdx?" on":""}"><div class="wrap sl"><div><p class="kicker">${s.kicker||t.hero_kicker}</p><h1>${s.t}</h1><p class="lead">${s.d}</p><div class="cta"><a class="btn" href="${s.href}"${s.ext?` target="_blank" rel="noopener"`:""}>${s.cta}</a><a class="btn ghost" href="${wa()}" target="_blank" rel="noopener">${t.hero_cta2}</a></div></div><div class="art">${ICONS[s.ico]||ICONS.drill}</div></div></div>`).join("");
+  $("dots").innerHTML = S.map((s,i)=>`<button aria-label="${i+1}" aria-current="${i===slideIdx}" data-i="${i}"></button>`).join("");
 }
 function goSlide(i){
-  const n=T().slides.length; slideIdx=(i+n)%n;
+  const n=document.querySelectorAll(".slide").length||1; slideIdx=(i+n)%n;
   document.querySelectorAll(".slide").forEach((e,k)=>e.classList.toggle("on",k===slideIdx));
   document.querySelectorAll("#dots button").forEach((e,k)=>e.setAttribute("aria-current",k===slideIdx));
 }
@@ -53,17 +59,17 @@ $("slider").addEventListener("focusin",()=>clearInterval(timer));
 
 // Catálogo con filtros
 let q="", quote={};
+function infoLine(s){ const i=info(s); if(i.precio==null&&i.stock==null) return ""; return `<div class="mrow"><span class="price">${priceTxt(s,lang)}</span><span class="pill ${stockState(s)}">${stockTxt(s,lang)}</span></div>`; }
 function renderCatalog(){
-  const t=T(), cats=["all","drill","grinder","saw","hammer"];
-  $("filters").innerHTML = cats.map(c=>`<button role="tab" aria-selected="${c===filter}" data-f="${c}">${t["f_"+c]}</button>`).join("");
+  const t=T(), cats=["all",...CATEGORIAS.map(c=>c.id)]; if(!cats.includes(filter)) filter="all";
+  $("filters").innerHTML = cats.map(c=>`<button role="tab" aria-selected="${c===filter}" data-f="${c}">${c==="all"?t.f_all:catLabel(c)}</button>`).join("");
   $("search").placeholder = t.search_ph;
   const ranked = q ? smartSearch(q,lang) : PRODUCTOS;
   const list = ranked.filter(p=>filter==="all"||p.c===filter);
   $("ideas").innerHTML = q ? `<span>${t.results_for} «${q}»</span><button type="button" data-idea="">${t.clear_s}</button>` : t.ideas.map(i=>`<button type="button" data-idea="${i}">${i}</button>`).join("");
-  $("catalogo").innerHTML = list.length ? list.map(p=>`
-   <article class="card prod">${q&&p===list[0]?`<span class="best">${t.best}</span>`:""}<div class="pic">${ICONS[p.ico]}</div><span class="sku">${p.s}</span><h3>${p[lang]}</h3>
-   <div class="pact"><button class="btn sm" data-add="${p.s}">${quote[p.s]?t.added:t.add_q}</button><a class="more" href="${p.u}" target="_blank" rel="noopener">${t.sheet}</a></div></article>`).join("")
-   : `<p class="empty">${t.no_results}</p>`;
+  $("catalogo").innerHTML = (list.length ? list.map(p=>`
+   <article class="card prod">${q&&p===list[0]?`<span class="best">${t.best}</span>`:""}<div class="pic">${iconOf(p)}</div><span class="sku">${p.s}</span><h3>${p[lang]}</h3>${infoLine(p.s)}
+   <div class="pact"><button class="btn sm" data-add="${p.s}">${quote[p.s]?t.added:t.add_q}</button><button class="btn ghost sm cmpb" data-cmp="${p.s}">${cmp.includes(p.s)?t.cmp_on:t.cmp_add}</button><a class="more" href="${p.u}" target="_blank" rel="noopener">${t.sheet}</a><button class="btn ghost sm" data-share="${p.s}" aria-label="${t.share}">🔗</button>${stockState(p.s)==="out"?`<a class="more" href="${wa((lang==="es"?"Avísenme cuando llegue ":"Let me know when it is back: ")+p.s)}" target="_blank" rel="noopener">${t.notify}</a>`:""}</div></article>`).join("") : "") + (typeof catExtra==="function" ? catExtra(list.length) : (list.length ? "" : `<p class="empty">${t.no_results}</p>`));
 }
 $("search").oninput=e=>{ q=e.target.value.trim(); renderCatalog(); };
 $("ideas").onclick=e=>{ if(e.target.dataset.idea===undefined) return; q=e.target.dataset.idea; $("search").value=q; renderCatalog(); };
@@ -71,11 +77,11 @@ const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
 if(SR){ $("micBtn").hidden=false; $("micBtn").onclick=()=>{ const r=new SR(); r.lang=lang==="es"?"es-CO":"en-US";
   $("micBtn").classList.add("on"); r.onend=()=>$("micBtn").classList.remove("on");
   r.onresult=e=>{ q=e.results[0][0].transcript; $("search").value=q; renderCatalog(); }; try{r.start()}catch(_){} }; }
-$("catalogo").onclick=e=>{ const s=e.target.dataset.add; if(!s) return; quote[s]=(quote[s]||0)+1; renderQuote(); e.target.textContent=T().added; };
+$("catalogo").onclick=e=>{ if(e.target.dataset.share){ shareProduct(e.target.dataset.share); return; } if(e.target.dataset.cmp){ toggleCmp(e.target.dataset.cmp); return; } const s=e.target.dataset.add; if(!s) return; quote[s]=(quote[s]||0)+1; renderQuote(); e.target.textContent=T().added; };
 
 // Lista de cotización
 function renderQuote(){
-  const t=T(), items=Object.keys(quote), n=items.reduce((x,k)=>x+quote[k],0);
+  const t=T(), items=Object.keys(quote).filter(s=>PRODUCTOS.some(p=>p.s===s)), n=items.reduce((x,k)=>x+quote[k],0);
   $("qPill").hidden = !n; $("qPill").textContent = `${t.q_pill} (${n})`;
   $("qEmpty").hidden = !!items.length; $("qSend").hidden = !items.length; $("qClear").hidden = !items.length;
   $("qList").innerHTML = items.map(s=>{const p=PRODUCTOS.find(x=>x.s===s);return `<li><span><b>${s}</b><br><small>${p[lang]}</small></span><div class="step"><button type="button" data-s="${s}" data-d="-1" aria-label="-">−</button><output>${quote[s]}</output><button type="button" data-s="${s}" data-d="1" aria-label="+">+</button></div></li>`}).join("");
@@ -134,7 +140,6 @@ $("burger").onclick = () => $("burger").setAttribute("aria-expanded", $("nav").c
 $("nav").onclick = e => { if(e.target.tagName==="A") $("nav").classList.remove("open"); };
 
 // ---- Chatbot ----
-const norm = s => s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"");
 function say(txt, who){
   const d = document.createElement("div"); d.className = "m "+who; d.textContent = txt;
   $("msgs").appendChild(d); $("msgs").scrollTop = $("msgs").scrollHeight; return d;
@@ -144,7 +149,8 @@ function responder(q){
   const hit = T().faq.find(f => f.k.some(w => n.includes(norm(w))));
   if(hit) return hit.r;
   const rec = smartSearch(q,lang).slice(0,3);
-  return rec.length ? T().chat_rec+"\n"+rec.map(p=>`• ${p[lang]} (${p.s})`).join("\n") : T().chat_unk;
+  if(rec.length) return T().chat_rec+"\n"+rec.map(p=>`• ${p[lang]} (${p.s})`).join("\n");
+  const cs=searchCats(q); return cs.length ? (lang==="es"?"Sí manejamos: ":"We carry: ")+cs.map(c=>c.n[lang]).join(", ")+(lang==="es"?". Un asesor te confirma modelos y precios por WhatsApp.":". An advisor will confirm models and prices on WhatsApp.") : T().chat_unk;
 }
 function ask(q){
   if(!q.trim()) return;
@@ -170,7 +176,7 @@ render(); play();
 // Formulario de garantía → WhatsApp / correo (no se guarda nada en servidor)
 function warrantyText(){
   const f=$("wForm"), t=T(), v=n=>f.elements[n].value.trim();
-  return `${t.wf_head}\n${t.wf_n}: ${v("name")}\n${t.wf_p}: ${v("phone")}\n${t.wf_m}: ${v("model")}\n${t.wf_s}: ${v("serial")||"-"}\n${t.wf_i}: ${v("issue")}`;
+  return `${t.wf_head}\n${t.wf_n}: ${v("name")}\n${t.wf_p}: ${v("phone")}\n${t.wf_m}: ${v("model")}\n${t.wf_s}: ${v("serial")||"-"}\n${t.wf_i}: ${v("issue")}`+(v("date")?`\n${t.f_date}: ${v("date")} (${v("slot")})`:"");
 }
 function warrantyOK(){
   const f=$("wForm"), ok = f.checkValidity();
@@ -193,7 +199,7 @@ function renderPromos(){
       until = left===0 ? t.promo_last : left<=7 ? t.promo_left.replace("{n}",left) : `${t.promo_until} ${dt}`;
     }
     const msg=(lang==="es"?"Hola, quiero la promoción: ":"Hello, I want the offer: ")+p.t[lang];
-    return `<article class="promo"><span class="badge">${p.badge[lang]}</span><div class="art sm">${ICONS[p.ico]}</div><h3>${p.t[lang]}</h3><p>${p.d[lang]}</p>${until?`<p class="until">${until}</p>`:""}<a class="btn sm" href="${wa(msg)}" target="_blank" rel="noopener">${t.promo_cta}</a></article>`;
+    return `<article class="promo"><span class="badge">${p.badge[lang]}</span><div class="art sm">${ICONS[p.ico]}</div><h3>${p.t[lang]}</h3><p>${p.d[lang]}</p>${until?`<p class="until">${until}</p>`:""}${p.hasta?`<span class="cd" data-end="${p.hasta}T23:59:59-05:00"></span>`:""}<a class="btn sm" href="${wa(msg)}" target="_blank" rel="noopener">${t.promo_cta}</a></article>`;
   }).join("");
 }
 
