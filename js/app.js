@@ -44,7 +44,7 @@ function render(){
 function renderSlides(){
   const t=T(), S = typeof allSlides==="function" ? allSlides() : t.slides;
   if(slideIdx>=S.length) slideIdx=0;
-  $("slides").innerHTML = S.map((s,i)=>`<div class="slide${i===slideIdx?" on":""}"><div class="wrap sl"><div><p class="kicker">${s.kicker||t.hero_kicker}</p><h1>${s.t}</h1><p class="lead">${s.d}</p><div class="cta"><a class="btn" href="${s.href}"${s.ext?` target="_blank" rel="noopener"`:""}>${s.cta}</a><a class="btn ghost" href="${wa()}" target="_blank" rel="noopener">${t.hero_cta2}</a></div></div><div class="art">${ICONS[s.ico]||ICONS.drill}</div></div></div>`).join("");
+  $("slides").innerHTML = S.map((s,i)=>`<div class="slide${i===slideIdx?" on":""}"><div class="wrap sl"><div><p class="kicker">${s.kicker||t.hero_kicker}</p><h2 class="st">${s.t}</h2><p class="lead">${s.d}</p><div class="cta"><a class="btn" href="${s.href}"${s.ext?` target="_blank" rel="noopener"`:""}>${s.cta}</a><a class="btn ghost" href="${wa()}" target="_blank" rel="noopener">${t.hero_cta2}</a></div></div><div class="art">${ICONS[s.ico]||ICONS.drill}</div></div></div>`).join("");
   $("dots").innerHTML = S.map((s,i)=>`<button aria-label="${i+1}" aria-current="${i===slideIdx}" data-i="${i}"></button>`).join("");
 }
 function goSlide(i){

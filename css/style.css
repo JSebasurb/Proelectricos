@@ -14,7 +14,7 @@ nav a{text-decoration:none;font-weight:600}
 nav a:hover{color:var(--y)}
 .burger{display:none;background:none;border:0;color:var(--y);font-size:1.7rem}
 .hero{background:var(--k);color:#fff;padding:72px 0 0}
-.hero h1{font-size:clamp(2.6rem,9vw,5.2rem);max-width:14ch;color:var(--y);text-transform:uppercase}
+.hero h1,.hero .st{font-size:clamp(2.6rem,9vw,5.2rem);max-width:14ch;color:var(--y);text-transform:uppercase}
 .hero p{max-width:52ch;margin:20px 0 28px;color:#ddd;font-size:1.15rem}
 .stripe{height:26px;margin-top:56px;background:repeating-linear-gradient(-45deg,var(--y) 0 22px,var(--k) 22px 44px)}
 .cta{display:flex;flex-wrap:wrap;gap:12px}
@@ -478,3 +478,20 @@ nav a[aria-current=page]{color:var(--y);box-shadow:inset 0 -4px 0 var(--y)}
 .ptag.compra{background:#1565c0;color:#fff}.ptag.proyecto{background:#6a1b9a;color:#fff}.ptag.guia{background:var(--y);color:var(--k)}
 .card.art .pmeta{margin-bottom:2px}
 @media(max-width:700px){.feat{grid-template-columns:1fr}.pico2.big{width:110px}}
+
+/* v15 SEO: texto solo para lectores/buscadores, páginas estáticas de guías */
+.sr-only{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.top.simple nav{display:flex!important;position:static;flex-direction:row;flex-wrap:wrap;gap:6px 16px;background:none;border:0}
+.top.simple nav a{padding:0;border:0;font-size:.95rem}
+@media(max-width:700px){.top.simple{flex-direction:column;align-items:flex-start;gap:8px}}
+.crumbs{font-size:.9rem;color:#666;margin-bottom:14px}
+.legal .lead{font-size:1.15rem;color:#333;margin:6px 0 18px}
+.legal ul{margin:8px 0 8px 22px;display:grid;gap:6px}
+.legal ul.guides{margin-left:0;list-style:none}
+.legal ul.guides li{background:#fff;border:2px solid var(--k);border-left:8px solid var(--y);border-radius:var(--r);padding:12px 14px}
+.legal ul.guides span{color:#555;font-size:.95rem}
+.legal .kitbox{background:#f3f3ee;border-left:10px solid var(--y);border-radius:var(--r);padding:6px 18px 14px;margin:24px 0}
+.legal .cta{margin:26px 0}
+.fcols{grid-template-columns:1.4fr 1fr 1fr 1.2fr 1fr}
+#ftGuides{display:flex;flex-direction:column;gap:8px}
+@media(max-width:900px){.fcols{grid-template-columns:1fr 1fr}}

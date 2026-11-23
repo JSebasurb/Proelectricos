@@ -35,6 +35,8 @@ function renderBlog(){
   $("blogFilters").innerHTML=cats.map(c=>`<button role="tab" aria-selected="${c===blogCat}" data-bc="${c}">${c==="all"?t.blog_all:catLabel(c)}</button>`).join("");
   $("blogGrid").innerHTML=ARTICULOS.filter(a=>(blogCat==="all"||a.cat===blogCat)&&(blogTipo==="all"||a.tipo===blogTipo)).map(artCard).join("");
   $("blogUses").innerHTML=`<thead><tr><th>${t.blog_task}</th><th>${t.blog_tool}</th><th></th></tr></thead><tbody>${TABLA_USOS.map(r=>`<tr><td>${r.t[lang]}</td><td><b>${r.h[lang]}</b></td><td><button type="button" class="btn ghost sm" data-cat="${r.c}">${t.blog_see}</button></td></tr>`).join("")}</tbody>`;
+  const base=lang==="en"?"blog/en/":"blog/";
+  $("ftGuides").innerHTML=ARTICULOS.slice(0,6).map(a=>`<a href="${base}${a.slug}.html">${a.t[lang]}</a>`).join("")+`<a href="${base}index.html"><b>${t.ft_guides_all}</b></a>`;
   if(curArt) openArticle(curArt);
 }
 function openArticle(slug){

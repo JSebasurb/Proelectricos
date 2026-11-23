@@ -75,3 +75,15 @@ js/search.js entiende tareas ("cortar baldosa"), sinónimos ES/EN y errores de t
 - Cada artículo puede traer `kit:[{sku:"..."} | {cat:"..."}]`: muestra las referencias con precio/stock (si existen) y botones "Agregar a mi cotización" y "Cotizar kit por WhatsApp".
 - `destacado:true` en un artículo lo pone como guía destacada. Los 3 primeros recomendados salen también en el Inicio.
 - El total de un kit solo se muestra cuando TODAS sus referencias tienen precio cargado.
+
+## v15 · SEO (cómo dejarlo aplicado)
+1. Publica en GitHub Pages (o con tu dominio) y anota la dirección final, por ejemplo https://tuusuario.github.io/tu-repo
+2. Con Node instalado, desde la carpeta del sitio:  node herramientas/generar-seo.js https://tuusuario.github.io/tu-repo
+   Esto cambia la dirección en canonical, imagen de compartir, datos estructurados, sitemap y robots, y regenera las páginas del blog.
+   (Sin Node: reemplaza a mano https://TU-USUARIO.github.io/TU-REPO en index.html, sitemap.xml y robots.txt.)
+3. Cada vez que edites js/articulos.js, vuelve a ejecutar:  node herramientas/generar-seo.js
+4. Google Search Console: agrega tu sitio, verifícalo y envía sitemap.xml.
+5. Google Business Profile (gratis): crea/reclama el perfil de la ferretería con la misma dirección, teléfono, horario y categoría; es lo que más ayuda a aparecer en "ferretería en Popayán".
+6. Cuando tengas número de WhatsApp y horario reales, avísame para agregarlos a los datos estructurados (teléfono y horario).
+- Las áreas de la página (#catalogo, #blog...) son una sola página: Google no indexa por separado lo que va después del "#". Por eso las guías tienen páginas propias en /blog/ (indexables, español e inglés).
+- La imagen para compartir en redes es assets/og-image.png (1200×630).

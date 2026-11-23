@@ -6,6 +6,7 @@ function showView(v){
   VIEWS.forEach(x=>{ const el=document.querySelector(`[data-view="${x}"]`); if(el) el.hidden = x!==v; });
   document.querySelectorAll("#nav a[data-v]").forEach(a=>a.setAttribute("aria-current", a.dataset.v===v?"page":"false"));
   document.title = (T().view_titles[v]||"")+" | Proelectricos";
+  const md=document.querySelector('meta[name="description"]'); if(md&&T().view_descs&&T().view_descs[v]) md.setAttribute("content",T().view_descs[v]);
 }
 function goTo(id){
   const el=document.getElementById(id), box=el&&el.closest?el.closest("[data-view]"):null;

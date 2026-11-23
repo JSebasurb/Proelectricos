@@ -596,3 +596,15 @@ Object.assign(I18N.en,{
 });
 I18N.es.faq.splice(2,0,{k:["kits sugeridos","que comprar","guia de compra","primer taladro","primera herramienta","recomendados"],r:"En la sección Blog tienes recomendados, kits sugeridos, guías de compra y proyectos paso a paso para elegir bien. También puedes escribirnos qué trabajo vas a hacer y te asesoramos."});
 I18N.en.faq.splice(2,0,{k:["suggested kits","what to buy","buying guide","first drill","first tool","recommended"],r:"The Blog section has recommended tools, suggested kits, buying guides and step-by-step projects to help you choose well. You can also tell us what job you'll do and we'll advise you."});
+
+// ---- v15: SEO ----
+Object.assign(I18N.es,{
+ seo_h1:"Proelectricos Popayán: herramienta eléctrica, inversores, repuestos y servicio técnico DEWALT",
+ ft_guides:"Guías", ft_guides_all:"Ver todas las guías",
+ view_descs:{inicio:"Herramienta eléctrica DEWALT, inversores, repuestos y centro de servicio autorizado en Popayán. Calle 4 #21C-14.",catalogo:"Catálogo de herramienta eléctrica, inversores, lijadoras, taladros, sierras, Mototool, motores, alambre esmaltado y equipo de seguridad en Popayán.",repuestos:"Repuestos (inducido, campo, mandril, carbones) y mantenimiento y arreglo para taladros, rotomartillos, demoledores, sierras y pulidoras.",garantias:"Centro de servicio autorizado DEWALT en Popayán: información de garantía, seguimiento de tu caso y solicitud de servicio.",blog:"Guías de compra, proyectos y consejos: qué herramienta usar y para qué. Kits recomendados por Proelectricos.",contacto:"Visita Proelectricos en la Calle 4 #21C-14, Popayán, o escríbenos por WhatsApp y correo."}
+});
+Object.assign(I18N.en,{
+ seo_h1:"Proelectricos Popayán: power tools, inverters, spare parts and authorized DEWALT service",
+ ft_guides:"Guides", ft_guides_all:"See all guides",
+ view_descs:{inicio:"DEWALT power tools, inverters, spare parts and authorized service center in Popayán, Colombia. Calle 4 #21C-14.",catalogo:"Catalog of power tools, inverters, sanders, drills, saws, rotary tools, motors, enameled wire and safety equipment in Popayán.",repuestos:"Spare parts (armature, field, chuck, brushes) and maintenance and repair for drills, rotary hammers, demolition hammers, saws and polishers.",garantias:"Authorized DEWALT service center in Popayán: warranty information, case tracking and service request.",blog:"Buying guides, projects and tips: which tool to use and for what. Kits recommended by Proelectricos.",contacto:"Visit Proelectricos at Calle 4 #21C-14, Popayán, or message us on WhatsApp and email."}
+});
