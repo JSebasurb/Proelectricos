@@ -21,8 +21,8 @@ const catName=(id,L)=>(CAT.find(c=>c.id===id)||{n:{[L]:id}}).n[L];
 const hasWA=/^\d{10,15}$/.test(NEG.whatsapp||"");
 const waLink=(txt)=>hasWA?`https://wa.me/${NEG.whatsapp}?text=${encodeURIComponent(txt)}`:null;
 const url=(L,slug)=>`${SITE}/blog/${L==="en"?"en/":""}${slug?slug+".html":""}`;
-const T={es:{home:"Inicio",catalog:"Catálogo",blog:"Blog",contact:"Contacto",other:"English",min:"min de lectura",kit:"Kit recomendado para este trabajo",more:"Más guías",ask:"Preguntar por WhatsApp",cat:"Ver en el catálogo",hubH:"Guías y proyectos: qué herramienta usar y para qué",hubP:"Guías de compra, proyectos paso a paso y consejos sobre taladros, lijadoras, sierras, inversores, Mototool, motores, alambre esmaltado, martillos y equipo de seguridad.",hubT:"Blog: qué herramienta usar y para qué | Proelectricos Popayán",foot:"Proelectricos · Popayán, Cauca",privacy:"Privacidad",terms:"Términos",tipos:{compra:"Guías de compra",proyecto:"Proyectos",guia:"Guías"}},
- en:{home:"Home",catalog:"Catalog",blog:"Blog",contact:"Contact",other:"Español",min:"min read",kit:"Recommended kit for this job",more:"More guides",ask:"Ask on WhatsApp",cat:"See in the catalog",hubH:"Guides and projects: which tool to use, and for what",hubP:"Buying guides, step-by-step projects and tips about drills, sanders, saws, inverters, rotary tools, motors, enameled wire, hammers and safety equipment.",hubT:"Blog: which tool to use and for what | Proelectricos Popayán",foot:"Proelectricos · Popayán, Cauca, Colombia",privacy:"Privacy",terms:"Terms",tipos:{compra:"Buying guides",proyecto:"Projects",guia:"Guides"}}};
+const T={es:{home:"Inicio",catalog:"Catálogo",blog:"Blog",contact:"Contacto",other:"English",min:"min de lectura",kit:"Kit recomendado para este trabajo",more:"Más guías",ask:"Preguntar por WhatsApp",cat:"Ver en el catálogo",hubH:"Guías y proyectos: qué herramienta usar y para qué",hubP:"Guías de compra, proyectos paso a paso y consejos sobre taladros, lijadoras, sierras, inversores soldadores, Mototool, motores, alambre esmaltado, martillos y equipo de seguridad.",hubT:"Blog: qué herramienta usar y para qué | Proelectricos Popayán",foot:"Proelectricos · Popayán, Cauca",privacy:"Privacidad",terms:"Términos",tipos:{compra:"Guías de compra",proyecto:"Proyectos",guia:"Guías"}},
+ en:{home:"Home",catalog:"Catalog",blog:"Blog",contact:"Contact",other:"Español",min:"min read",kit:"Recommended kit for this job",more:"More guides",ask:"Ask on WhatsApp",cat:"See in the catalog",hubH:"Guides and projects: which tool to use, and for what",hubP:"Buying guides, step-by-step projects and tips about drills, sanders, saws, welding inverters, rotary tools, motors, enameled wire, hammers and safety equipment.",hubT:"Blog: which tool to use and for what | Proelectricos Popayán",foot:"Proelectricos · Popayán, Cauca, Colombia",privacy:"Privacy",terms:"Terms",tipos:{compra:"Buying guides",proyecto:"Projects",guia:"Guides"}}};
 
 function page({L,rel,title,desc,canon,alt,body,ld,type="website"}){
   const other=L==="es"?"en":"es", t=T[L];
@@ -73,6 +73,9 @@ function hubPage(L){
 // ---- escribir páginas ----
 let n=0;
 for(const L of ["es","en"]){ wr(`blog/${L==="en"?"en/":""}index.html`,hubPage(L)); n++; for(const a of ART){ wr(`blog/${L==="en"?"en/":""}${a.slug}.html`,articlePage(a,L)); n++; } }
+// ---- redirecciones de guías que cambiaron de dirección ----
+const AL=G("typeof SLUG_ALIAS==='undefined'?{}:SLUG_ALIAS");
+for(const [old,nw] of Object.entries(AL)) for(const L of ["es","en"]) wr(`blog/${L==="en"?"en/":""}${old}.html`,`<!DOCTYPE html><html lang="${L}"><head><meta charset="UTF-8"><meta name="robots" content="noindex"><link rel="canonical" href="${url(L,nw)}"><meta http-equiv="refresh" content="0;url=${nw}.html"><title>Proelectricos</title></head><body><p><a href="${nw}.html">${nw}</a></p></body></html>`);
 // ---- sitemap y robots ----
 const alts=(es,en)=>`<xhtml:link rel="alternate" hreflang="es" href="${es}"/><xhtml:link rel="alternate" hreflang="en" href="${en}"/>`;
 const urls=[`<url><loc>${SITE}/</loc><lastmod>${today}</lastmod><priority>1.0</priority></url>`,
@@ -83,7 +86,7 @@ wr("sitemap.xml",`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://
 wr("robots.txt",`User-agent: *\nAllow: /\nDisallow: /worker/\nDisallow: /plantillas/\nDisallow: /herramientas/\n\nSitemap: ${SITE}/sitemap.xml\n`);
 // ---- bloque <noscript> en el inicio (enlaces rastreables a las guías) ----
 let idx=rd("index.html");
-const ns=`<!--SEO-NOSCRIPT--><noscript><div class="wrap legal"><h1>Proelectricos Popayán</h1><p>Herramienta eléctrica, inversores, repuestos y servicio técnico autorizado DEWALT. ${esc(NEG.direccion)}. ${NEG.correo}</p><p><a href="blog/index.html">Guías y proyectos</a> · <a href="blog/en/index.html">Guides (English)</a></p><ul>${ART.map(a=>`<li><a href="blog/${a.slug}.html">${esc(a.t.es)}</a></li>`).join("")}</ul><p>Esta página necesita JavaScript para mostrar el catálogo y las herramientas.</p></div></noscript><!--/SEO-NOSCRIPT-->`;
+const ns=`<!--SEO-NOSCRIPT--><noscript><div class="wrap legal"><h1>Proelectricos Popayán</h1><p>Herramienta eléctrica, inversores soldadores, repuestos y servicio técnico autorizado DEWALT. ${esc(NEG.direccion)}. ${NEG.correo}</p><p><a href="blog/index.html">Guías y proyectos</a> · <a href="blog/en/index.html">Guides (English)</a></p><ul>${ART.map(a=>`<li><a href="blog/${a.slug}.html">${esc(a.t.es)}</a></li>`).join("")}</ul><p>Esta página necesita JavaScript para mostrar el catálogo y las herramientas.</p></div></noscript><!--/SEO-NOSCRIPT-->`;
 if(idx.includes("<!--SEO-NOSCRIPT-->")){ idx=idx.replace(/<!--SEO-NOSCRIPT-->[\s\S]*?<!--\/SEO-NOSCRIPT-->/,()=>ns); wr("index.html",idx); }
 console.log(`Listo: ${n} páginas del blog, sitemap.xml (${urls.length} direcciones) y robots.txt para ${SITE}`);
 if(SITE.includes("TU-USUARIO")) console.log("AVISO: la dirección aún es de ejemplo. Ejecuta: node herramientas/generar-seo.js https://tu-direccion-real");

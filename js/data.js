@@ -11,17 +11,15 @@ const D = NEGOCIO.dewalt + "/productos/herramientas-electricas/";
 const I18N = {
  es:{
   nav_products:"Productos", nav_systems:"Baterías", nav_warranty:"Servicio autorizado", nav_contact:"Contacto",
-  hero_kicker:"Popayán · Herramienta eléctrica · Inversores",
+  hero_kicker:"Popayán · Herramienta eléctrica · Inversores soldadores",
   hero_title:"Solidez garantizada para tu trabajo",
-  hero_text:"Herramienta eléctrica DEWALT, inversores y centro de servicio autorizado DEWALT en Popayán. Asesoría directa para que elijas el equipo correcto y no pares.",
+  hero_text:"Herramienta eléctrica DEWALT, inversores soldadores y centro de servicio autorizado DEWALT en Popayán. Asesoría directa para que elijas el equipo correcto y no pares.",
   hero_cta1:"Ver productos", hero_cta2:"Cotizar por WhatsApp",
   prod_title:"Herramientas eléctricas", prod_sub:"Taladros, amoladoras, sierras, rotomartillos y combos DEWALT. Pregunta por disponibilidad y precio.",
   pop_title:"Referencias populares",
   sys_xr:"Baterías y herramientas inalámbricas de 20V MAX* XR® para los trabajos más exigentes.",
   sys_flex:"Una sola batería que cambia de voltaje según la herramienta: potencia y tiempo de uso para obra pesada.",
   sys_note:"*Tecnología y especificaciones según el fabricante. Consulta compatibilidad de baterías con nuestro equipo.",
-  inv_title:"Inversores de energía", inv_text:"Llévate energía a donde la necesites. Te ayudamos a calcular la potencia según los equipos que vas a conectar.",
-  inv_card_t:"¿Qué inversor necesito?", inv_card_d:"Dinos qué herramientas o equipos vas a usar y te recomendamos.", inv_cta:"Pedir asesoría",
   war_title:"Centro de servicio autorizado DEWALT en Popayán",
   war_text:"Si tu herramienta DEWALT falla, no tienes que viajar a otra ciudad. Recibimos tu equipo y gestionamos la garantía o reparación.",
   war_bring:"Qué debes traer", war_link:"Ver política de garantía DEWALT",
@@ -53,12 +51,12 @@ const I18N = {
    {t:"Dónde comprar", d:"Estamos en la Calle 4 #21C-14, Popayán. Visítanos o escríbenos."},
    {t:"Garantía de productos", d:"Información de garantía, reparación o reemplazo de tu producto DEWALT."}
   ],
-  sug:["Garantía DEWALT","Inversores","Ubicación","Horario","Cotizar"],
+  sug:["Garantía DEWALT","Soldadores","Ubicación","Horario","Cotizar"],
   faq:[
-   {k:["hola","buenas","buenos"],r:"¡Hola! Soy el asistente de Proelectricos. Pregúntame por productos, garantía DEWALT, inversores, ubicación u horario."},
+   {k:["hola","buenas","buenos"],r:"¡Hola! Soy el asistente de Proelectricos. Pregúntame por productos, garantía DEWALT, inversores soldadores, ubicación u horario."},
    {k:["factura","documento","requisito","traer","llevar"],r:"Para garantía lleva: factura de compra, la herramienta con accesorios, número de modelo y serie, y un contacto."},
    {k:["garantia","dewalt","reparar","reparacion","falla","dañ"],r:"Somos centro de servicio autorizado DEWALT en Popayán. Trae tu herramienta con la factura y la revisamos. Escribe «documentos» para ver qué llevar."},
-   {k:["inversor","energia","planta","solar"],r:"Manejamos inversores de energía. Dinos qué equipos quieres conectar y te recomendamos la potencia."},
+   {k:["inversor","soldador","soldadora","soldar","soldadura","electrodo"],r:"Manejamos inversores soldadores. Cuéntanos qué vas a soldar (tipo de electrodo o espesor) y te recomendamos el amperaje. Mira la calculadora de soldadura en el Catálogo."},
    {k:["bateria","20v","60v","flexvolt","xr"],r:"Trabajamos sistemas DEWALT 20V MAX* XR y FlexVolt 60V MAX*. Consulta compatibilidad por WhatsApp."},
    {k:["taladro","amoladora","esmeriladora","sierra","rotomartillo","combo","herramienta"],r:"Tenemos herramienta eléctrica DEWALT: taladros, amoladoras, sierras, rotomartillos y combos. Pide disponibilidad por WhatsApp."},
    {k:["donde","direccion","ubicacion","local","llegar"],r:"Estamos en la Calle 4 #21C-14, Popayán. El mapa está en la sección Contacto."},
@@ -72,17 +70,15 @@ const I18N = {
  },
  en:{
   nav_products:"Products", nav_systems:"Batteries", nav_warranty:"Authorized service", nav_contact:"Contact",
-  hero_kicker:"Popayán · Power tools · Inverters",
+  hero_kicker:"Popayán · Power tools · Welding inverters",
   hero_title:"Guaranteed toughness for your job",
-  hero_text:"DEWALT power tools, inverters and an authorized DEWALT service center in Popayán. Direct advice so you pick the right gear and keep working.",
+  hero_text:"DEWALT power tools, welding inverters and an authorized DEWALT service center in Popayán. Direct advice so you pick the right gear and keep working.",
   hero_cta1:"View products", hero_cta2:"Get a quote on WhatsApp",
   prod_title:"Power tools", prod_sub:"DEWALT drills, grinders, saws, rotary hammers and combo kits. Ask about availability and price.",
   pop_title:"Popular models",
   sys_xr:"20V MAX* XR® cordless batteries and tools for the most demanding jobs.",
   sys_flex:"One battery that switches voltage with the tool: power and runtime for heavy-duty work.",
   sys_note:"*Technology and specifications per manufacturer. Ask us about battery compatibility.",
-  inv_title:"Power inverters", inv_text:"Take power wherever you need it. We help you size the inverter for the equipment you plan to connect.",
-  inv_card_t:"Which inverter do I need?", inv_card_d:"Tell us which tools or equipment you will use and we will recommend one.", inv_cta:"Ask for advice",
   war_title:"DEWALT authorized service center in Popayán",
   war_text:"If your DEWALT tool fails, you don't have to travel to another city. We receive your tool and handle the warranty or repair.",
   war_bring:"What to bring", war_link:"DEWALT warranty policy",
@@ -114,12 +110,12 @@ const I18N = {
    {t:"Where to buy", d:"We are at Calle 4 #21C-14, Popayán. Visit or message us."},
    {t:"Product warranty", d:"Warranty, repair or replacement information for your DEWALT product."}
   ],
-  sug:["DEWALT warranty","Inverters","Location","Hours","Quote"],
+  sug:["DEWALT warranty","Welders","Location","Hours","Quote"],
   faq:[
-   {k:["hello","hi ","hey"],r:"Hi! I'm the Proelectricos assistant. Ask me about products, DEWALT warranty, inverters, location or hours."},
+   {k:["hello","hi ","hey"],r:"Hi! I'm the Proelectricos assistant. Ask me about products, DEWALT warranty, welding inverters, location or hours."},
    {k:["invoice","document","require","bring"],r:"For warranty bring: proof of purchase, the tool with accessories, model and serial number, and a contact."},
    {k:["warranty","dewalt","repair","fail","broken"],r:"We are an authorized DEWALT service center in Popayán. Bring your tool with the invoice and we'll inspect it. Type \"documents\" to see what to bring."},
-   {k:["inverter","power supply","solar","energy"],r:"We carry power inverters. Tell us what you want to connect and we'll recommend the right power."},
+   {k:["inverter","welder","welding","weld","electrode"],r:"We carry welding inverters. Tell us what you'll weld (electrode type or thickness) and we'll recommend the amperage. See the welding calculator in the Catalog."},
    {k:["battery","batteries","20v","60v","flexvolt","xr"],r:"We work with DEWALT 20V MAX* XR and FlexVolt 60V MAX* systems. Ask compatibility on WhatsApp."},
    {k:["drill","grinder","saw","hammer","combo","tool"],r:"We have DEWALT power tools: drills, grinders, saws, rotary hammers and combo kits. Ask availability on WhatsApp."},
    {k:["where","address","location","find you"],r:"We're at Calle 4 #21C-14, Popayán. The map is in the Contact section."},
@@ -144,27 +140,12 @@ const PRODUCTOS = [
  {s:"D25481K-B3",u:"https://www.dewalt.com.co/es-co/producto/d25481k-b3/kit-de-rotomartillo-combinado-sds-max-de-1-916-40mm-de-61j",c:"martillo",ico:"hammer",es:"Kit rotomartillo combinado SDS MAX 1-9/16\" 6.1J",en:"SDS MAX combination rotary hammer kit 1-9/16\" 6.1J"},
  {s:"D25960K-B3",u:"https://www.dewalt.com.co/es-co/producto/d25960k-b3/kit-de-martillo-demoledor-hexagonal-en-linea-de-1-18-de-40-lbs",c:"martillo",ico:"hammer",es:"Kit martillo demoledor hexagonal 1-1/8\" 40 lb",en:"1-1/8\" hex demolition hammer kit 40 lb"}
 ];
-const CARGAS = [ // vatios de referencia; m = motor (pico de arranque)
- {id:"led",w:10,es:"Bombillo LED",en:"LED bulb"},
- {id:"cargador",w:100,es:"Cargador de batería / celular",en:"Battery / phone charger"},
- {id:"pc",w:150,es:"Computador portátil",en:"Laptop"},
- {id:"taladro",w:700,m:1,es:"Taladro eléctrico",en:"Electric drill"},
- {id:"rotomartillo",w:1000,m:1,es:"Rotomartillo",en:"Rotary hammer"},
- {id:"amoladora",w:1500,m:1,es:"Amoladora 4-1/2\"",en:"4-1/2\" grinder"},
- {id:"sierra",w:1800,m:1,es:"Sierra circular",en:"Circular saw"},
- {id:"compresor",w:1200,m:1,es:"Compresor pequeño",en:"Small compressor"}
-];
-const INV_SIZES = [300,600,1000,1500,2000,3000,5000,8000];
 
 Object.assign(I18N.es,{
- nav_inv:"Inversores", nav_guide:"Guía",
+ nav_inv:"Soldadores", nav_guide:"Guía",
  prod_sub:"Taladros, amoladoras, sierras y rotomartillos DEWALT. Filtra por tipo y cotiza por WhatsApp.",
  f_all:"Todos", f_drill:"Taladros", f_grinder:"Amoladoras", f_saw:"Sierras", f_hammer:"Rotomartillos", quote:"Cotizar",
  sys_title:"Elige tu sistema de batería", sys_sub:"Una batería, muchas herramientas. Escoge el voltaje según tu trabajo.",
- inv_title:"Calculadora de inversor", inv_text:"Marca lo que vas a conectar y te sugerimos la potencia del inversor.",
- calc_total:"Consumo total estimado", calc_rec:"Inversor sugerido", calc_none:"Elige equipos",
- calc_note:"Valores de referencia: revisa la placa de cada equipo. Incluye margen de seguridad y pico de arranque de motores. Confirma con nuestro asesor.",
- calc_over:"Más de 8000 W: consúltanos", inv_cta:"Confirmar con un asesor",
  guide_title:"Guía rápida para elegir y cuidar tu herramienta", guide_sub:"Información útil antes de comprar o de traer tu equipo al servicio.",
  sistemas:[
   {t:"12V MAX*",ico:"drill",d:"Compacta y liviana. Ideal para atornillar y taladrar en espacios reducidos, instalaciones y acabados.",uses:["Atornillado y ensamble","Instalaciones eléctricas","Mantenimiento en altura"]},
@@ -181,14 +162,10 @@ Object.assign(I18N.es,{
  ]
 });
 Object.assign(I18N.en,{
- nav_inv:"Inverters", nav_guide:"Guide",
+ nav_inv:"Welders", nav_guide:"Guide",
  prod_sub:"DEWALT drills, grinders, saws and rotary hammers. Filter by type and get a quote on WhatsApp.",
  f_all:"All", f_drill:"Drills", f_grinder:"Grinders", f_saw:"Saws", f_hammer:"Rotary hammers", quote:"Get a quote",
  sys_title:"Choose your battery system", sys_sub:"One battery, many tools. Pick the voltage that fits your job.",
- inv_title:"Inverter calculator", inv_text:"Select what you will plug in and we'll suggest the inverter power.",
- calc_total:"Estimated total load", calc_rec:"Suggested inverter", calc_none:"Pick equipment",
- calc_note:"Reference values: check each device's label. Includes a safety margin and motor start-up peak. Confirm with our advisor.",
- calc_over:"Over 8000 W: contact us", inv_cta:"Confirm with an advisor",
  guide_title:"Quick guide to choosing and caring for your tool", guide_sub:"Useful information before you buy or bring your tool in for service.",
  sistemas:[
   {t:"12V MAX*",ico:"drill",d:"Compact and lightweight. Ideal for driving and drilling in tight spaces, installations and finishing.",uses:["Driving and assembly","Electrical installations","Overhead maintenance"]},
@@ -220,8 +197,8 @@ I18N.en.slides=[
 
 Object.assign(I18N.es,{
  about_title:"Sobre Proelectricos",
- about_text:"Somos una ferretería en Popayán enfocada en herramienta eléctrica e inversores, y centro de servicio autorizado DEWALT. Te asesoramos para elegir el equipo correcto y te acompañamos después de la compra con garantía y reparación.",
- points:["Especialistas en herramienta eléctrica","Inversores con asesoría de potencia","Servicio autorizado DEWALT en la ciudad","Atención directa por WhatsApp"],
+ about_text:"Somos una ferretería en Popayán enfocada en herramienta eléctrica e inversores soldadores, y centro de servicio autorizado DEWALT. Te asesoramos para elegir el equipo correcto y te acompañamos después de la compra con garantía y reparación.",
+ points:["Especialistas en herramienta eléctrica","Inversores soldadores con asesoría de amperaje","Servicio autorizado DEWALT en la ciudad","Atención directa por WhatsApp"],
  form_title:"Solicitud de garantía o servicio", form_sub:"Llena los datos y envíalos por WhatsApp o correo. Luego trae tu herramienta con la factura.",
  f_name:"Nombre completo", f_phone:"Teléfono", f_model:"Modelo de la herramienta", f_serial:"Número de serie (opcional)", f_issue:"¿Qué falla presenta?",
  f_consent:"Autorizo el tratamiento de mis datos según la", f_wa:"Enviar por WhatsApp", f_mail:"Enviar por correo",
@@ -231,8 +208,8 @@ Object.assign(I18N.es,{
 });
 Object.assign(I18N.en,{
  about_title:"About Proelectricos",
- about_text:"We are a hardware store in Popayán focused on power tools and inverters, and an authorized DEWALT service center. We help you pick the right equipment and support you after purchase with warranty and repair.",
- points:["Power tool specialists","Inverters with power sizing advice","Authorized DEWALT service in town","Direct support on WhatsApp"],
+ about_text:"We are a hardware store in Popayán focused on power tools and welding inverters, and an authorized DEWALT service center. We help you pick the right equipment and support you after purchase with warranty and repair.",
+ points:["Power tool specialists","Welding inverters with amperage advice","Authorized DEWALT service in town","Direct support on WhatsApp"],
  form_title:"Warranty or service request", form_sub:"Fill in the details and send them by WhatsApp or email. Then bring your tool with the invoice.",
  f_name:"Full name", f_phone:"Phone", f_model:"Tool model", f_serial:"Serial number (optional)", f_issue:"What is the problem?",
  f_consent:"I authorize the processing of my data according to the", f_wa:"Send via WhatsApp", f_mail:"Send by email",
@@ -249,14 +226,14 @@ Object.assign(I18N.es,{
  add_q:"Agregar a cotización", added:"Agregado ✓", sheet:"Ficha DEWALT",
  q_title:"Mi lista de cotización", q_empty:"Aún no has agregado productos.", q_send:"Enviar por WhatsApp", q_clear:"Vaciar", q_close:"Cerrar",
  q_pill:"🧾 Mi cotización", q_head:"Hola Proelectricos, quiero cotizar:", con_dir:"Cómo llegar", open_now:"Abierto ahora", closed_now:"Cerrado ahora",
- trust:["Servicio autorizado DEWALT","Asesoría en inversores","Garantía y reparación local","Respuesta por WhatsApp"]
+ trust:["Servicio autorizado DEWALT","Asesoría en inversores soldadores","Garantía y reparación local","Respuesta por WhatsApp"]
 });
 Object.assign(I18N.en,{
  skip:"Skip to content", search_ph:"Search by name or model…", no_results:"We couldn't find that model. Message us and we'll check.",
  add_q:"Add to quote", added:"Added ✓", sheet:"DEWALT page",
  q_title:"My quote list", q_empty:"You haven't added any products yet.", q_send:"Send via WhatsApp", q_clear:"Clear", q_close:"Close",
  q_pill:"🧾 My quote", q_head:"Hello Proelectricos, I'd like a quote for:", con_dir:"Get directions", open_now:"Open now", closed_now:"Closed now",
- trust:["Authorized DEWALT service","Inverter advice","Local warranty and repair","Replies on WhatsApp"]
+ trust:["Authorized DEWALT service","Welding inverter advice","Local warranty and repair","Replies on WhatsApp"]
 });
 
 // ---- PROMOCIONES: edita, agrega o borra. Se ocultan solas al pasar la fecha "hasta" (AAAA-MM-DD, null = sin vencimiento).
@@ -272,12 +249,12 @@ const PROMOS = [
   d:{es:"Texto de ejemplo: usa esta tarjeta para una oferta de amoladoras, discos o accesorios.",en:"Sample text: use this card for an offer on grinders, discs or accessories."}},
  {hasta:null, ico:"inverter",
   badge:{es:"Ejemplo",en:"Example"},
-  t:{es:"Asesoría gratis en inversores",en:"Free inverter advice"},
-  d:{es:"Texto de ejemplo: cuéntanos qué vas a conectar y te recomendamos la potencia.",en:"Sample text: tell us what you'll connect and we'll recommend the right power."}}
+  t:{es:"Asesoría para elegir tu inversor soldador",en:"Advice to choose your welding inverter"},
+  d:{es:"Texto de ejemplo: cuéntanos qué vas a soldar y te recomendamos el amperaje.",en:"Sample text: tell us what you'll weld and we'll recommend the right amperage."}}
 ];
 const TOPICS = {
- es:["Cotización de productos","Inversores","Garantía / servicio técnico","Otro"],
- en:["Product quote","Inverters","Warranty / service","Other"]
+ es:["Cotización de productos","Inversores soldadores","Garantía / servicio técnico","Otro"],
+ en:["Product quote","Welding inverters","Warranty / service","Other"]
 };
 Object.assign(I18N.es,{
  nav_promo:"Promociones", promo_title:"Promociones", promo_sub:"Ofertas vigentes en Proelectricos. Pregunta por disponibilidad.",
@@ -472,7 +449,7 @@ const CATEGORIAS = [
  {id:"taladro-alam",ico:"drill",n:{es:"Taladros alámbricos",en:"Corded drills"},d:{es:"Taladros con cable: potencia constante para trabajos largos.",en:"Corded drills: steady power for long jobs."}},
  {id:"sierra",ico:"saw",n:{es:"Sierras",en:"Saws"},d:{es:"Sierras para cortar madera y otros materiales.",en:"Saws to cut wood and other materials."}},
  {id:"amoladora",ico:"grinder",n:{es:"Amoladoras y pulidoras",en:"Grinders"},d:{es:"Amoladoras para cortar, desbastar y pulir metal y piedra.",en:"Grinders to cut, grind and polish metal and stone."}},
- {id:"inversor",ico:"inverter",n:{es:"Inversores",en:"Inverters"},d:{es:"Inversores de energía para tener corriente alterna desde una batería.",en:"Power inverters to get AC power from a battery."}},
+  {id:"inversor",ico:"inverter",n:{es:"Inversores soldadores",en:"Welding inverters"},d:{es:"Inversores soldadores para soldar con electrodo y, según el modelo, otros procesos.",en:"Welding inverters to stick weld and, depending on the model, other processes."}},
  {id:"mototool",ico:"mototool",n:{es:"Mototool",en:"Rotary tools (Mototool)"},d:{es:"Mototool para grabar, cortar, pulir y trabajos de detalle.",en:"Rotary tools to engrave, cut, polish and do detail work."}},
  {id:"motor",ico:"motor",n:{es:"Motores",en:"Motors"},d:{es:"Motores eléctricos para máquinas, bombas y ventiladores.",en:"Electric motors for machines, pumps and fans."}},
  {id:"alambre",ico:"wire",n:{es:"Alambre de cobre esmaltado",en:"Enameled copper wire"},d:{es:"Alambre para embobinado, desde calibre 36 hasta 6.",en:"Winding wire, from gauge 36 to 6."}},
@@ -492,7 +469,7 @@ Object.assign(I18N.es,{
  cat_title:"Categorías de productos", cat_sub:"Selecciona una categoría. Si aún no tiene referencias en línea, te asesoramos por WhatsApp.",
  cat_online:"en línea", cat_ask:"Consultar", cat_found:"Sí manejamos:", cat_noonline:"Aún no tenemos referencias cargadas en línea. Pregunta por modelos, precios y disponibilidad.",
  cat_more:"¿No ves tu referencia? Consúltanos y la buscamos.", wire_link:"Ver tabla de calibres", cat_related:"Guías relacionadas",
- sub_products:"Productos", sub_ai:"Asistente y Lens", sub_batt:"Baterías", sub_inv:"Inversores", sub_wire:"Calibres de alambre", sub_faq:"Preguntas",
+ sub_products:"Productos", sub_ai:"Asistente y Lens", sub_batt:"Baterías", sub_inv:"Soldadura", sub_wire:"Calibres de alambre", sub_faq:"Preguntas",
  wire_title:"Alambre de cobre esmaltado: calibres AWG 36 a 6", wire_sub:"Alambre para embobinado de motores, transformadores y bobinas.",
  wire_calc:"¿Qué calibre necesito?", wire_amps:"Corriente del bobinado (A)", wire_res:"Calibre sugerido", wire_none:"Más de 40 A: usa un conductor mayor o varios en paralelo. Consúltanos.",
  wire_note:"Valores orientativos: diámetro del cobre desnudo (el esmalte suma una capa fina), resistencia a 20 °C y corriente de referencia de 3 A/mm² para bobinado. Depende de la ventilación, el aislamiento y el servicio. Confirma con un asesor.",
@@ -514,7 +491,7 @@ Object.assign(I18N.en,{
  cat_title:"Product categories", cat_sub:"Select a category. If it has no models online yet, we advise you on WhatsApp.",
  cat_online:"online", cat_ask:"Ask us", cat_found:"We carry:", cat_noonline:"We don't have models loaded online yet. Ask about models, prices and availability.",
  cat_more:"Don't see your model? Ask us and we'll find it.", wire_link:"See gauge table", cat_related:"Related guides",
- sub_products:"Products", sub_ai:"Assistant and Lens", sub_batt:"Batteries", sub_inv:"Inverters", sub_wire:"Wire gauges", sub_faq:"FAQ",
+ sub_products:"Products", sub_ai:"Assistant and Lens", sub_batt:"Batteries", sub_inv:"Welding", sub_wire:"Wire gauges", sub_faq:"FAQ",
  wire_title:"Enameled copper wire: AWG 36 to 6", wire_sub:"Winding wire for motors, transformers and coils.",
  wire_calc:"Which gauge do I need?", wire_amps:"Winding current (A)", wire_res:"Suggested gauge", wire_none:"Over 40 A: use a larger conductor or several in parallel. Ask us.",
  wire_note:"Reference values: bare copper diameter (enamel adds a thin layer), resistance at 20 °C and a reference current of 3 A/mm² for windings. It depends on ventilation, insulation and duty. Confirm with an advisor.",
@@ -531,14 +508,14 @@ Object.assign(I18N.es,{
  prod_title:"Catálogo en línea", prod_sub:"Filtra por categoría o escribe lo que necesitas hacer. Cotiza por WhatsApp.",
  pg_cat_t:"Catálogo", pg_cat_d:"Productos por categoría, asistente, Lens, calculadoras y respuestas a tus preguntas.",
  pg_warr_t:"Garantías y servicio técnico", pg_warr_d:"Centro de servicio autorizado DEWALT en Popayán: información, seguimiento de tu caso y solicitud de garantía.",
- pg_blog_t:"Blog", pg_blog_d:"Qué herramienta usar y para qué: lijadoras, taladros, sierras, inversores, motores, alambre y más.",
+ pg_blog_t:"Blog", pg_blog_d:"Qué herramienta usar y para qué: lijadoras, taladros, sierras, inversores soldadores, motores, alambre y más.",
  pg_contact_t:"Contacto", pg_contact_d:"Visítanos, escríbenos o llámanos por WhatsApp."
 });
 Object.assign(I18N.en,{
  prod_title:"Online catalog", prod_sub:"Filter by category or type what you need to do. Get a quote on WhatsApp.",
  pg_cat_t:"Catalog", pg_cat_d:"Products by category, assistant, Lens, calculators and answers to your questions.",
  pg_warr_t:"Warranty and service", pg_warr_d:"Authorized DEWALT service center in Popayán: information, case tracking and warranty request.",
- pg_blog_t:"Blog", pg_blog_d:"Which tool to use and for what: sanders, drills, saws, inverters, motors, wire and more.",
+ pg_blog_t:"Blog", pg_blog_d:"Which tool to use and for what: sanders, drills, saws, welding inverters, motors, wire and more.",
  pg_contact_t:"Contact", pg_contact_d:"Visit us, write to us or message us on WhatsApp."
 });
 
@@ -599,12 +576,36 @@ I18N.en.faq.splice(2,0,{k:["suggested kits","what to buy","buying guide","first 
 
 // ---- v15: SEO ----
 Object.assign(I18N.es,{
- seo_h1:"Proelectricos Popayán: herramienta eléctrica, inversores, repuestos y servicio técnico DEWALT",
+ seo_h1:"Proelectricos Popayán: herramienta eléctrica, inversores soldadores, repuestos y servicio técnico DEWALT",
  ft_guides:"Guías", ft_guides_all:"Ver todas las guías",
- view_descs:{inicio:"Herramienta eléctrica DEWALT, inversores, repuestos y centro de servicio autorizado en Popayán. Calle 4 #21C-14.",catalogo:"Catálogo de herramienta eléctrica, inversores, lijadoras, taladros, sierras, Mototool, motores, alambre esmaltado y equipo de seguridad en Popayán.",repuestos:"Repuestos (inducido, campo, mandril, carbones) y mantenimiento y arreglo para taladros, rotomartillos, demoledores, sierras y pulidoras.",garantias:"Centro de servicio autorizado DEWALT en Popayán: información de garantía, seguimiento de tu caso y solicitud de servicio.",blog:"Guías de compra, proyectos y consejos: qué herramienta usar y para qué. Kits recomendados por Proelectricos.",contacto:"Visita Proelectricos en la Calle 4 #21C-14, Popayán, o escríbenos por WhatsApp y correo."}
+ view_descs:{inicio:"Herramienta eléctrica DEWALT, inversores soldadores, repuestos y centro de servicio autorizado en Popayán. Calle 4 #21C-14.",catalogo:"Catálogo de herramienta eléctrica, inversores soldadores, lijadoras, taladros, sierras, Mototool, motores, alambre esmaltado y equipo de seguridad en Popayán.",repuestos:"Repuestos (inducido, campo, mandril, carbones) y mantenimiento y arreglo para taladros, rotomartillos, demoledores, sierras y pulidoras.",garantias:"Centro de servicio autorizado DEWALT en Popayán: información de garantía, seguimiento de tu caso y solicitud de servicio.",blog:"Guías de compra, proyectos y consejos: qué herramienta usar y para qué. Kits recomendados por Proelectricos.",contacto:"Visita Proelectricos en la Calle 4 #21C-14, Popayán, o escríbenos por WhatsApp y correo."}
 });
 Object.assign(I18N.en,{
- seo_h1:"Proelectricos Popayán: power tools, inverters, spare parts and authorized DEWALT service",
+ seo_h1:"Proelectricos Popayán: power tools, welding inverters, spare parts and authorized DEWALT service",
  ft_guides:"Guides", ft_guides_all:"See all guides",
- view_descs:{inicio:"DEWALT power tools, inverters, spare parts and authorized service center in Popayán, Colombia. Calle 4 #21C-14.",catalogo:"Catalog of power tools, inverters, sanders, drills, saws, rotary tools, motors, enameled wire and safety equipment in Popayán.",repuestos:"Spare parts (armature, field, chuck, brushes) and maintenance and repair for drills, rotary hammers, demolition hammers, saws and polishers.",garantias:"Authorized DEWALT service center in Popayán: warranty information, case tracking and service request.",blog:"Buying guides, projects and tips: which tool to use and for what. Kits recommended by Proelectricos.",contacto:"Visit Proelectricos at Calle 4 #21C-14, Popayán, or message us on WhatsApp and email."}
+ view_descs:{inicio:"DEWALT power tools, welding inverters, spare parts and authorized service center in Popayán, Colombia. Calle 4 #21C-14.",catalogo:"Catalog of power tools, welding inverters, sanders, drills, saws, rotary tools, motors, enameled wire and safety equipment in Popayán.",repuestos:"Spare parts (armature, field, chuck, brushes) and maintenance and repair for drills, rotary hammers, demolition hammers, saws and polishers.",garantias:"Authorized DEWALT service center in Popayán: warranty information, case tracking and service request.",blog:"Buying guides, projects and tips: which tool to use and for what. Kits recommended by Proelectricos.",contacto:"Visit Proelectricos at Calle 4 #21C-14, Popayán, or message us on WhatsApp and email."}
+});
+
+// ---- v16: soldadura con electrodo (inversores soldadores) ----
+// Amperajes de referencia para electrodo revestido; varían según tipo de electrodo, posición y fabricante.
+const ELECTRODOS = [
+ {mm:1.6,in:"1/16",min:30,max:50},{mm:2.0,in:"5/64",min:40,max:75},{mm:2.5,in:"3/32",min:60,max:100},
+ {mm:3.2,in:"1/8",min:90,max:140},{mm:4.0,in:"5/32",min:120,max:190},{mm:5.0,in:"3/16",min:160,max:250}
+];
+const WELD_SIZES = [120,140,160,200,250,315];   // amperajes máximos comunes de inversores soldadores
+Object.assign(I18N.es,{
+ weld_title:"Soldadura con electrodo: amperaje y consumo", weld_sub:"Elige el diámetro del electrodo y mira el amperaje típico, el inversor soldador sugerido y la corriente que consume.",
+ weld_elec:"Diámetro del electrodo", weld_volt:"Tensión de alimentación", weld_cols:["Electrodo","Amperaje típico (A)"],
+ weld_amps:"Amperaje típico", weld_min:"Inversor soldador sugerido (mín.)", weld_in:"Corriente de entrada aprox.", weld_big:"Más de 315 A: consúltanos",
+ weld_warn110:"A 110 V este consumo supera lo que suele soportar un tomacorriente común: usa 220 V.",
+ weld_note:"Valores orientativos para electrodo revestido: varían según el tipo de electrodo, la posición y el fabricante (revisa la caja). La corriente de entrada supone ~85 % de eficiencia. Verifica el circuito y las protecciones con un electricista.",
+ weld_cta:"Asesoría para elegir mi inversor soldador", weld_msg:"Hola, necesito asesoría para un inversor soldador. Voy a usar electrodo de "
+});
+Object.assign(I18N.en,{
+ weld_title:"Stick welding: amperage and power draw", weld_sub:"Pick the electrode diameter and see the typical amperage, the suggested welding inverter and the current it draws.",
+ weld_elec:"Electrode diameter", weld_volt:"Supply voltage", weld_cols:["Electrode","Typical amperage (A)"],
+ weld_amps:"Typical amperage", weld_min:"Suggested welding inverter (min.)", weld_in:"Approx. input current", weld_big:"Over 315 A: ask us",
+ weld_warn110:"At 110 V this draw exceeds what a standard outlet usually handles: use 220 V.",
+ weld_note:"Reference values for coated electrodes: they vary with electrode type, position and manufacturer (check the box). Input current assumes ~85% efficiency. Have an electrician verify the circuit and protections.",
+ weld_cta:"Advice to choose my welding inverter", weld_msg:"Hello, I need advice on a welding inverter. I'll use a electrode of "
 });

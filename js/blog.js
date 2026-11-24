@@ -40,6 +40,7 @@ function renderBlog(){
   if(curArt) openArticle(curArt);
 }
 function openArticle(slug){
+  slug=(typeof SLUG_ALIAS!=="undefined"&&SLUG_ALIAS[slug])||slug;
   const t=T(), a=ARTICULOS.find(x=>x.slug===slug);
   if(!a){ closeArticle(); return; }
   curArt=slug; $("blogList").hidden=true; $("blogRead").hidden=false;

@@ -11,7 +11,7 @@ Estructura por capas:
 
 ## Archivos
 - js/icons.js → ilustraciones SVG propias
-- js/data.js  → productos, textos ES/EN, FAQ, cargas de la calculadora
+- js/data.js  → productos, textos ES/EN, FAQ, electrodos de la calculadora de soldadura
 
 ## Antes de publicar (checklist)
 - js/data.js: whatsapp, horario.
@@ -21,7 +21,7 @@ Estructura por capas:
 - assets/logo.svg e icon.svg: reemplazar por el logo oficial si ya tienen uno.
 
 ## Promociones
-Edita `PROMOS` en js/data.js: título, descripción, badge, ícono (drill, grinder, saw, hammer, battery, inverter) y fecha `hasta`. Las vencidas se ocultan solas; sin vigentes, la sección desaparece.
+Edita `PROMOS` en js/data.js: título, descripción, badge, ícono (drill, grinder, saw, hammer, battery, inverter = inversor soldador) y fecha `hasta`. Las vencidas se ocultan solas; sin vigentes, la sección desaparece.
 
 ## Búsqueda inteligente
 js/search.js entiende tareas ("cortar baldosa"), sinónimos ES/EN y errores de tipeo. Al agregar un producto nuevo en PRODUCTOS, añade sus palabras en TAGS (por categoría o por referencia) para que la búsqueda lo encuentre.
@@ -57,8 +57,8 @@ js/search.js entiende tareas ("cortar baldosa"), sinónimos ES/EN y errores de t
 - Los textos marcados "Ejemplo" son de muestra: bórralos o reemplázalos antes de publicar.
 
 ## v12 · Cinco áreas, categorías reales y blog
-- Áreas (hash): #inicio, #catalogo, #garantias, #blog, #contacto. Un enlace a cualquier sección interna (p. ej. #inversores) abre su área automáticamente.
-- CATEGORIAS (js/data.js): lijadora, taladro-inal, taladro-alam, sierra, amoladora, inversor, mototool, motor, alambre, martillo, seguridad, otras.
+- Áreas (hash): #inicio, #catalogo, #garantias, #blog, #contacto. Un enlace a cualquier sección interna (p. ej. #soldadura) abre su área automáticamente.
+- CATEGORIAS (js/data.js): lijadora, taladro-inal, taladro-alam, sierra, amoladora, inversor (inversores soldadores), mototool, motor, alambre, martillo, seguridad, otras.
   En el CSV del catálogo, la columna categoria debe usar esos ids (si no coincide, el producto queda en "otras").
   Las categorías sin referencias cargadas muestran un panel que invita a consultar por WhatsApp.
 - Blog: edita ARTICULOS y TABLA_USOS en js/articulos.js. Los enlaces a artículos son #blog/slug.
@@ -87,3 +87,8 @@ js/search.js entiende tareas ("cortar baldosa"), sinónimos ES/EN y errores de t
 6. Cuando tengas número de WhatsApp y horario reales, avísame para agregarlos a los datos estructurados (teléfono y horario).
 - Las áreas de la página (#catalogo, #blog...) son una sola página: Google no indexa por separado lo que va después del "#". Por eso las guías tienen páginas propias en /blog/ (indexables, español e inglés).
 - La imagen para compartir en redes es assets/og-image.png (1200×630).
+
+## v16 · Inversores soldadores
+- La categoría "inversor" son **inversores soldadores** (equipos de soldar). Se mantuvo el id `inversor` para no romper hojas de Google ya conectadas.
+- Calculadora de soldadura (#soldadura): editar ELECTRODOS y WELD_SIZES en js/data.js. Valores orientativos para electrodo revestido.
+- La guía "como-elegir-inversor" ahora es "como-elegir-inversor-soldador"; el enlace anterior redirige (SLUG_ALIAS en js/articulos.js).

@@ -8,7 +8,7 @@ const T = () => I18N[lang];
 const wa = txt => `https://wa.me/${NEGOCIO.whatsapp}?text=${encodeURIComponent(txt || T().wa_default)}`;
 
 var cmp=[];
-let filter="all", sysIdx=1, slideIdx=0, timer, loadQty={};
+let filter="all", sysIdx=1, slideIdx=0, timer;
 function render(){
   const t = T();
   document.documentElement.lang = lang;
@@ -20,7 +20,7 @@ function render(){
   $("mailBtn").href = "mailto:"+NEGOCIO.correo;
   $("year").textContent = new Date().getFullYear();
   $("invIco").innerHTML = ICONS.inverter;
-  renderSlides(); renderCatalog(); renderSys(); renderLoads(); calc();
+  renderSlides(); renderCatalog(); renderSys(); renderWeld();
   $("acc").innerHTML = t.guia.map(g=>`<details><summary>${g.q}</summary><p>${g.a}</p></details>`).join("");
   $("pasos").innerHTML = t.pasos.map(p=>`<li>${p}</li>`).join("");
   $("requisitos").innerHTML = t.requisitos.map(p=>`<li>${p}</li>`).join("");
@@ -111,20 +111,20 @@ function renderSys(){
 }
 $("sysTabs").onclick=e=>{ if(e.target.dataset.i){sysIdx=+e.target.dataset.i;renderSys();} };
 
-// Calculadora de inversor
-function renderLoads(){
-  $("loads").innerHTML = CARGAS.map(c=>{const q=loadQty[c.id]||0;return `<div class="load"><span>${c[lang]} <small>${c.w} W</small></span><div class="step"><button type="button" data-id="${c.id}" data-d="-1" aria-label="-">−</button><output>${q}</output><button type="button" data-id="${c.id}" data-d="1" aria-label="+">+</button></div></div>`}).join("");
+// Calculadora de soldadura con electrodo (inversor soldador)
+var weldIdx=3;   // 3,2 mm por defecto
+function renderWeld(){
+  if(typeof ELECTRODOS==="undefined"||!ELECTRODOS) return;
+  const t=T(), e=ELECTRODOS[weldIdx]||ELECTRODOS[0], v=+($("wVolt").value||220);
+  const vout=20+0.04*e.max, iin=(vout*e.max/0.85)/v, size=WELD_SIZES.find(x=>x>=e.max);   // tensión de carga convencional · rendimiento ≈ 85 %
+  $("wElec").innerHTML=ELECTRODOS.map((x,i)=>`<option value="${i}">${x.mm} mm (${x.in}")</option>`).join(""); $("wElec").value=weldIdx;
+  $("wTable").innerHTML=`<thead><tr>${t.weld_cols.map(c=>`<th>${c}</th>`).join("")}</tr></thead><tbody>${ELECTRODOS.map((x,i)=>`<tr${i===weldIdx?' class="hl"':""}><th scope="row">${x.mm} mm (${x.in}")</th><td>${x.min}–${x.max}</td></tr>`).join("")}</tbody>`;
+  $("wAmps").textContent=`${e.min}–${e.max} A`; $("wMin").textContent=size?`≥ ${size} A`:t.weld_big; $("wIn").textContent=`≈ ${Math.round(iin)} A · ${v} V`;
+  $("wWarn").hidden=!(v===110&&iin>16);
+  $("waInv").href=wa(t.weld_msg+e.mm+" mm");
 }
-function calc(){
-  let tot=0, motor=0;
-  CARGAS.forEach(c=>{const q=loadQty[c.id]||0; tot+=q*c.w; if(q&&c.m) motor=Math.max(motor,c.w);});
-  $("rTotal").textContent = tot+" W";
-  const need = Math.max(tot*1.25, tot+motor), size = INV_SIZES.find(x=>x>=need);
-  $("rRec").textContent = !tot ? T().calc_none : size ? "≥ "+size+" W" : T().calc_over;
-  $("waInv").href = wa((lang==="es"?"Hola, necesito un inversor. Consumo estimado: ":"Hello, I need an inverter. Estimated load: ")+tot+" W");
-}
-$("loads").onclick=e=>{ const id=e.target.dataset.id; if(!id) return;
-  loadQty[id]=Math.max(0,Math.min(9,(loadQty[id]||0)+ +e.target.dataset.d)); renderLoads(); calc(); };
+$("wElec").addEventListener("change",e=>{ weldIdx=+e.target.value; renderWeld(); });
+$("wVolt").addEventListener("change",renderWeld);
 
 // Cabecera con sombra y botón subir
 addEventListener("scroll",()=>{ document.querySelector(".top").classList.toggle("scrolled",scrollY>20); $("toTop").hidden = scrollY<600; },{passive:true});

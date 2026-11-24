@@ -1,7 +1,7 @@
 // BÚSQUEDA INTELIGENTE (sin servidor): entiende tareas ("cortar baldosa"), sinónimos ES/EN y errores de tipeo.
 const TAGS = {
  "taladro-inal":"taladro taladrar perforar atornillar tornillo tornillos destornillador madera metal pared drywall mueble muebles ensamblar instalar inalambrico bateria drill drilling screw screws driver wood wall furniture cordless battery",
- amoladora:"amoladora esmeriladora pulidora esmerilar amolar pulir desbastar cortar corte disco metal baldosa ceramica piedra soldadura oxido grinder grinding polish cut cutting disc metal tile stone weld rust",
+ amoladora:"amoladora esmeriladora pulidora esmerilar amolar pulir desbastar cortar corte disco metal baldosa ceramica piedra oxido grinder grinding polish cut cutting disc metal tile stone rust",
  sierra:"sierra circular cortar corte madera tabla tablas carpinteria techo construccion triplex saw cut cutting wood board carpentry roof plywood",
  martillo:"rotomartillo martillo concreto cemento perforar demoler demolicion picar romper cincel piso pared escombro sds pesado hammer concrete cement drill demolish demolition break chisel floor wall heavy",
  "DCD806D2-B3":"profesional obra pesado sin carbones brushless 20v xr potente professional jobsite heavy brushless powerful",
@@ -52,7 +52,7 @@ Object.assign(TAGS,{
  repuestos:"repuesto repuestos pieza piezas inducido armadura rotor campo estator mandril portabrocas carbones escobillas rodamiento rodamientos balero engranaje piñon mantenimiento reparacion arreglo arreglar taller spare spares parts armature stator chuck brushes bearing gear maintenance repair service",
  "taladro-alam":"taladro alambrico alambricos cable electrico corded drill percutor concreto perforar",
  lijadora:"lijadora lijadoras lijar lija orbital banda disco acabado superficie madera pintura pulir sander sanding sandpaper finish wood paint",
- inversor:"inversor inversores energia corriente 12v bateria planta solar power inverter backup battery",
+ inversor:"inversor inversores soldador soldadores soldadora soldadoras soldar soldadura electrodo electrodos arco tig mma varilla careta welder welders welding inverter electrode arc stick",
  mototool:"mototool moto tool dremel minitorno grabar tallar pulir cortar afilar detalle rotary engrave carve polish sharpen",
  motor:"motor motores electrico monofasico trifasico hp rebobinar bobinado ventilador bomba electric motor rewind",
  alambre:"alambre cobre esmaltado embobinado bobinar bobina calibre awg transformador magnet wire enameled copper winding coil gauge",
