@@ -1,7 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /worker/
-Disallow: /plantillas/
-Disallow: /herramientas/
-
-Sitemap: https://TU-USUARIO.github.io/TU-REPO/sitemap.xml
