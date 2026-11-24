@@ -1,7 +1,7 @@
 // Servidor mínimo (Cloudflare Workers) para el asistente con IA real. SIN PROBAR: revísalo antes de usarlo.
 // 1) Crea un Worker, pega este código. 2) Agrega el secreto ANTHROPIC_API_KEY (Settings > Variables).
 // 3) Pon la URL del Worker en INV_CONF.endpoint (js/data.js). La clave NUNCA va en la página.
-const ALLOWED_ORIGIN = "https://TU-USUARIO.github.io"; // cambia por tu dominio
+const ALLOWED_ORIGIN = "https://jsebasurb.github.io"; // cambia por tu dominio
 const MODEL = "claude-haiku-5-5";
 export default {
   async fetch(req, env){

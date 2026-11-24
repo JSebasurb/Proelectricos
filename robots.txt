@@ -4,4 +4,4 @@ Disallow: /worker/
 Disallow: /plantillas/
 Disallow: /herramientas/
 
-Sitemap: https://TU-USUARIO.github.io/TU-REPO/sitemap.xml
+Sitemap: https://JSebasurb.github.io/Proelectricos/sitemap.xml
