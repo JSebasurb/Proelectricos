@@ -1,0 +1,80 @@
+name: Validar SEO y Desplegar en GitHub Pages
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+# Permisos necesarios para publicar en GitHub Pages
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+# Evita que dos ejecuciones se pisen si haces varios push seguidos
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build-and-validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Descarga todo el código de tu repositorio para que el runner pueda leerlo
+      - name: Descargar código del repositorio
+        uses: actions/checkout@v4
+
+      # 2. Configura Node.js (necesario para validar JS y correr generar-seo.js)
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # 3. Verifica que todos tus archivos .js (data.js, articulos.js, etc.) no tengan errores de sintaxis
+      - name: Validar sintaxis de JavaScript
+        run: |
+          echo "Revisando archivos JavaScript..."
+          find . -name "*.js" -not -path "./node_modules/*" -exec node --check {} +
+          echo "Todos los archivos JS tienen sintaxis válida."
+
+      # 4. Ejecuta el generador SEO con la URL real de tu repositorio en GitHub Pages
+      - name: Regenerar SEO y páginas del blog
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: |
+          URL_SITIO="https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}"
+          echo "Generando SEO para: $URL_SITIO"
+          if [ -f "herramientas/generar-seo.js" ]; then
+            node herramientas/generar-seo.js "$URL_SITIO"
+          fi
+
+      # 5. Guarda los cambios generados por el script SEO en el repositorio (si hubo cambios)
+      - name: Guardar cambios de SEO en el repositorio
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git diff --staged --quiet || git commit -m "chore: actualizar SEO y blog automáticamente [skip ci]"
+          git push
+
+      # 6. Prepara los archivos del sitio para GitHub Pages
+      - name: Subir artefacto para GitHub Pages
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+
+  deploy:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: build-and-validate
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Desplegar en GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
