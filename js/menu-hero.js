@@ -64,7 +64,7 @@
   }
   function build(){
     const arr=slides();
-    sl.innerHTML=arr.map((s,k)=>`<div class="slide${k===i?" on":""}"><span class="hero-badge">${s.b}</span><h1>${s.t}</h1><p class="hero-lead">${s.l}</p></div>`).join("");
+    sl.innerHTML=arr.map((s,k)=>`<div class="slide${k===i?" on":""}"><span class="hero-badge">${s.b}</span><${k===0?"h1":"h2"} class="hl">${s.t}</${k===0?"h1":"h2"}><p class="hero-lead">${s.l}</p></div>`).join("");
     nt.innerHTML=arr.map((s,k)=>`<div class="slide${k===i?" on":""}"><strong>${s.nt}</strong><p>${s.nd}</p></div>`).join("");
     dots.innerHTML=arr.map((s,k)=>`<button type="button" class="dot${k===i?" on":""}" data-k="${k}" aria-label="${k+1}/${arr.length}"></button>`).join("");
   }

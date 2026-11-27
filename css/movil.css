@@ -77,6 +77,9 @@ html[lang="en"] .seal .es,html:not([lang="en"]) .seal .en{display:none}
   .hero-dots{justify-content:flex-start;margin-left:-2px}
 }
 @media(prefers-reduced-motion:reduce){.dot.on::after{animation:none;transform:none}.stack>.slide,.drawer{transition:none}}
+.hero h2.hl{font-size:clamp(2.1rem,8.5vw,3.6rem);font-weight:900;color:#fff;text-transform:uppercase;text-wrap:balance}
+.hero h2.hl span{color:var(--y)}
+@media(max-width:480px){.hero h2.hl{font-size:clamp(1.9rem,9vw,2.4rem)}}
 /* menu horizontal solo en pantallas anchas; antes se usa la hamburguesa */
 .brand{min-width:0}
 .brand-txt{min-width:0;overflow:hidden}

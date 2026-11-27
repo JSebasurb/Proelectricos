@@ -8,6 +8,8 @@ Centro de servicio autorizado DEWALT con más de 20 años de experiencia. Sitio 
 proelectricos-popayan/
 ├── index.html              ← página única (rutas por #hash)
 ├── 404.html                ← redirige al inicio
+├── robots.txt · sitemap.xml ← SEO: indexación y mapa del sitio
+├── tools/set-url.sh        ← cambia la URL de ejemplo por la tuya
 ├── .nojekyll               ← evita el procesado de Jekyll en GitHub Pages
 ├── css/
 │   ├── base.css            ← estilos base (tipografía, tarjetas, formularios, tablas…)
@@ -19,6 +21,7 @@ proelectricos-popayan/
 └── assets/img/
     ├── logo-medallon.webp  ← logo recortado en círculo, fondo transparente
     ├── logo-original.webp  ← logo original sin recortar
+    ├── og-image.png        ← imagen al compartir en WhatsApp/Facebook (1200×630)
     ├── favicon.webp
     └── icon-180.png
 ```
@@ -32,6 +35,25 @@ Edita el bloque `CONFIG` al inicio de `js/app.js`:
 - `csvInventario` / `csvGarantias` (opcional): enlaces CSV publicados desde Google Sheets.
 
 El horario de atención está en `HORARIO` (mismo archivo) y alimenta el estado "Abierto ahora" y el mensaje del hero.
+
+## SEO (importante: configura tu URL)
+
+El sitio ya incluye título y descripción, etiquetas Open Graph y Twitter, URL canónica, datos estructurados de negocio local (JSON-LD), `robots.txt`, `sitemap.xml` e imagen para compartir.
+
+Las URLs vienen con una dirección de ejemplo. Cuando sepas tu URL final, ejecútalo una vez:
+
+```bash
+./tools/set-url.sh https://TU-USUARIO.github.io/proelectricos-popayan/
+```
+
+(o busca y reemplaza `https://TU-USUARIO.github.io/proelectricos-popayan/` en `index.html`, `robots.txt` y `sitemap.xml`).
+
+Después:
+1. Crea o reclama tu ficha en **Google Business Profile** con la misma dirección y horario, y enlaza el sitio. Es lo que más ayuda a aparecer en "servicio DEWALT Popayán".
+2. Registra el sitio en **Google Search Console** y envía el `sitemap.xml`.
+3. En `index.html`, dentro del bloque JSON-LD, agrega `"telephone": "+57..."` con tu teléfono real.
+
+Notas: Google solo lee `robots.txt` en la raíz de un dominio, así que funciona del todo con dominio propio o un sitio de usuario (`usuario.github.io`); en un sitio de proyecto no hace daño, pero conviene enviar el sitemap manualmente. Además, el sitio es de una sola página con secciones por `#hash`, por lo que Google lo indexa como una única página.
 
 ## Publicar en GitHub Pages
 
