@@ -145,7 +145,7 @@ const I18N = {
     q_calc_t:"Calculadoras",q_calc_d:"Amperaje de soldadura y calibres AWG 36–6",
     home_cats_t:"Lo que manejamos",home_cats_d:"Toca una categoría para filtrar el catálogo o preguntar disponibilidad.",
     kits_t:"Kits recomendados",kits_d:"Armados para empezar tu proyecto sin olvidar nada. Cotízalos en un toque.",
-    cat_title:"Catálogo inteligente",cat_sub:"Busca por modelo (ej. DWE4577), por tarea o toma una foto a la etiqueta con 📷.",
+    cat_title:"Catálogo inteligente",cat_sub:"Busca por modelo (ej. DWE4577), por tarea o toma una foto a la etiqueta con el botón de cámara.",
     search_ph:"¿Qué buscas? Ej: cortar baldosa, DWE4577…",
     lens_t:"Búsqueda por foto (Local)",
     lens_loading:"Descargando lector de texto (solo la 1ª vez)…",
@@ -156,10 +156,10 @@ const I18N = {
     lens_retry:"Otra foto",lens_ask:"Enviar consulta",lens_raw:"Ver texto detectado",lens_clear:"Ver todo el catálogo",
     lens_priv:"Versión BETA: enfoca bien la placa o caja de la herramienta. La foto se analiza en tu dispositivo y no se guarda.",
     ideas:["Perforar concreto","Cortar baldosa","Atornillar","Cortar madera","Demoler piso","Alambre AWG"],
-    f_all:"Todas",add_q:"Agregar",added:"En lista ✓",ask_price:"Consultar precio",stock_in:"Disponible",stock_out:"Agotado",stock_ask:"Confirmar stock",
+    f_all:"Todas",add_q:"Agregar",added:"En lista <svg class='bi' viewBox='0 0 24 24' aria-hidden='true'><path d='m5 12.5 4.5 4.5L19 7.5'/></svg>",ask_price:"Consultar precio",stock_in:"Disponible",stock_out:"Agotado",stock_ask:"Confirmar stock",
     rep_title:"Repuestos y Servicio Técnico",rep_sub:"Elige tu herramienta, marca las piezas que fallan y envía tu solicitud directa por WhatsApp.",
     rep_form_t:"Solicitar repuesto o reparación",rep_types:["Repuesto","Mantenimiento preventivo","Reparación / arreglo"],
-    gar_t:"🧰 Mis herramientas guardadas",gar_d:"Guarda marca y modelo en tu celular para llenar formularios en un toque.",gar_save:"Guardar esta herramienta",gar_empty:"Ninguna guardada aún.",
+    gar_t:"<svg class='bi' viewBox='0 0 24 24' aria-hidden='true'><rect x='3' y='8' width='18' height='12' rx='2'/><path d='M9 8V6a1.5 1.5 0 0 1 1.5-1.5h3A1.5 1.5 0 0 1 15 6v2M3 13h18M11 13v2h2v-2'/></svg>Mis herramientas guardadas",gar_d:"Guarda marca y modelo en tu celular para llenar formularios en un toque.",gar_save:"Guardar esta herramienta",gar_empty:"Ninguna guardada aún.",
     f_name:"Nombre completo *",f_phone:"Teléfono / WhatsApp *",f_wa:"Enviar por WhatsApp",f_mail:"Enviar por correo",
     rep_f_type:"¿Qué necesitas?",rep_f_tool:"Herramienta",rep_f_brand:"Marca",rep_f_model:"Modelo / Referencia",rep_f_parts:"Repuestos marcados",rep_f_issue:"Describe la falla o síntoma",
     war_title:"Garantía Autorizada DEWALT",war_sub:"Recibimos tu equipo en Popayán, verificamos cobertura y gestionamos diagnóstico o reparación.",
@@ -207,7 +207,7 @@ const I18N = {
     q_calc_t:"Calculators",q_calc_d:"Welding amperage & AWG 36–6 copper wire",
     home_cats_t:"What we carry",home_cats_d:"Tap a category to filter the catalog or ask availability.",
     kits_t:"Recommended Kits",kits_d:"Put together to start your project right away. Request a quote in one tap.",
-    cat_title:"Smart Catalog",cat_sub:"Search by model (e.g. DWE4577), by job, or snap the label with 📷.",
+    cat_title:"Smart Catalog",cat_sub:"Search by model (e.g. DWE4577), by job, or snap the label with the camera button.",
     search_ph:"What do you need? E.g. cut tile, DWE4577…",
     lens_t:"Photo Search (Local)",
     lens_loading:"Loading text reader (first time only)…",
@@ -218,10 +218,10 @@ const I18N = {
     lens_retry:"Try another",lens_ask:"Ask on WhatsApp",lens_raw:"View detected text",lens_clear:"Show full catalog",
     lens_priv:"BETA: focus clearly on the tool nameplate or box. Processed locally on your device, never stored.",
     ideas:["Drill concrete","Cut tile","Drive screws","Cut wood","Demolish floor","AWG wire"],
-    f_all:"All",add_q:"Add",added:"Added ✓",ask_price:"Ask price",stock_in:"In stock",stock_out:"Out of stock",stock_ask:"Confirm stock",
+    f_all:"All",add_q:"Add",added:"Added <svg class='bi' viewBox='0 0 24 24' aria-hidden='true'><path d='m5 12.5 4.5 4.5L19 7.5'/></svg>",ask_price:"Ask price",stock_in:"In stock",stock_out:"Out of stock",stock_ask:"Confirm stock",
     rep_title:"Spare Parts & Service",rep_sub:"Pick your tool, select worn parts and send your request directly via WhatsApp.",
     rep_form_t:"Request part or repair",rep_types:["Spare part","Preventive maintenance","Repair"],
-    gar_t:"🧰 My saved tools",gar_d:"Save brand and model on your phone to autofill forms in one tap.",gar_save:"Save this tool",gar_empty:"No tools saved yet.",
+    gar_t:"<svg class='bi' viewBox='0 0 24 24' aria-hidden='true'><rect x='3' y='8' width='18' height='12' rx='2'/><path d='M9 8V6a1.5 1.5 0 0 1 1.5-1.5h3A1.5 1.5 0 0 1 15 6v2M3 13h18M11 13v2h2v-2'/></svg>My saved tools",gar_d:"Save brand and model on your phone to autofill forms in one tap.",gar_save:"Save this tool",gar_empty:"No tools saved yet.",
     f_name:"Full name *",f_phone:"Phone / WhatsApp *",f_wa:"Send via WhatsApp",f_mail:"Send by email",
     rep_f_type:"What do you need?",rep_f_tool:"Tool",rep_f_brand:"Brand",rep_f_model:"Model",rep_f_parts:"Selected parts",rep_f_issue:"Describe the fault or symptom",
     war_title:"DEWALT Authorized Warranty",war_sub:"We receive your tool in Popayán, verify coverage and handle diagnosis or repair.",
@@ -497,7 +497,7 @@ function renderCatalog(){
 
   $("clearLensBtn").hidden = !(state.lensSkus && state.lensSkus.length);
   $("catCount").textContent = state.lensSkus
-    ? `📷 ${list.length} ${lang==="es"?"coincidencias por foto":"photo matches"}`
+    ? `${list.length} ${lang==="es"?"coincidencias por foto":"photo matches"}`
     : `${list.length} ${lang==="es"?"referencias en línea":"models online"}`;
 
   $("openCmpBtn").hidden = state.cmp.length < 2;
@@ -510,7 +510,7 @@ function renderCatalog(){
       <h3 style="font-size:1.5rem;text-transform:uppercase">${esc(label || (lang==="es"?"Sin resultados en línea":"No online matches"))}</h3>
       <p style="color:var(--muted);margin:6px 0 14px">${lang==="es"?"Sí manejamos esta línea en almacén. Pregunta por referencias, precios y disponibilidad directa por WhatsApp.":"We carry this line in store. Ask for models, prices and stock on WhatsApp."}</p>
       <div class="cta-row" style="justify-content:center">
-        <a class="btn wa" href="${waUrl((lang==="es"?"Hola, busco información sobre: ":"Hello, I need info about: ")+label)}" target="_blank" rel="noopener">💬 ${t.cta_wa}</a>
+        <a class="btn wa" href="${waUrl((lang==="es"?"Hola, busco información sobre: ":"Hello, I need info about: ")+label)}" target="_blank" rel="noopener"><svg class="bi" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2.5 21.5z"/><path d="M9 9.5c.4 2 2.5 4.1 4.5 4.5l1.4-1.2-1.8-1.2-.8.6c-.7-.3-1.4-1-1.7-1.7l.6-.8-1.2-1.8z"/></svg>${t.cta_wa}</a>
         ${state.cat==="alambre"?`<a class="btn dark" href="#herramientas">${lang==="es"?"Ver tabla AWG":"See AWG table"}</a>`:""}
         ${state.cat==="repuestos"?`<a class="btn dark" href="#repuestos">${lang==="es"?"Ir a Repuestos":"Go to Parts"}</a>`:""}
       </div>
@@ -526,7 +526,7 @@ function renderCatalog(){
     const inQ = !!state.quote[p.s];
     const inC = state.cmp.includes(p.s);
     return `<article class="prod-card">
-      ${(state.q || state.lensSkus) && idx===0 ? `<span class="best-tag">${state.lensSkus?"📷 Match":"Top"}</span>`:""}
+      ${(state.q || state.lensSkus) && idx===0 ? `<span class="best-tag">${state.lensSkus?"<svg class='bi' viewBox='0 0 24 24' aria-hidden='true'><path d='M4 8h3l1.5-2.5h7L17 8h3v11H4z'/><circle cx='12' cy='13' r='3.5'/></svg>Match":"Top"}</span>`:""}
       <div class="prod-pic">${ICONS[p.ico]||ICONS.drill}</div>
       <span class="sku">${p.s}</span>
       <h3>${p[lang]}</h3>
@@ -537,7 +537,7 @@ function renderCatalog(){
       </div>
       <div class="prod-acts">
         <button type="button" class="btn sm" data-add="${p.s}">${inQ ? t.added : "+ "+t.add_q}</button>
-        <button type="button" class="icon-btn ${inC?"on":""}" data-cmp="${p.s}" title="${t.cmp_title}">⚖️</button>
+        <button type="button" class="icon-btn ${inC?"on":""}" data-cmp="${p.s}" title="${t.cmp_title}"><svg class='bi' viewBox='0 0 24 24' aria-hidden='true'><path d='M12 4v16M7 20h10M5 8h14'/><path d='M5 8l-2.5 6a3 3 0 0 0 5 0zM19 8l-2.5 6a3 3 0 0 0 5 0z'/></svg></button>
         <a class="icon-btn" href="${p.u}" target="_blank" rel="noopener" title="DEWALT">↗</a>
       </div>
     </article>`;
@@ -555,7 +555,7 @@ function renderRepuestos(){
     return `<article class="card" style="border-color:${on?"var(--k)":"var(--line)"};border-left:6px solid ${on?"var(--y)":"#bbb"}">
       <h3 style="font-size:1.3rem;text-transform:uppercase">${p[lang]}</h3>
       <p style="font-size:.88rem;color:var(--muted)">${p["s_"+lang]}</p>
-      <button type="button" class="btn sm ${on?"":"ghost"}" data-rpart="${pid}" style="margin-top:auto">${on?(lang==="es"?"Marcado ✓":"Selected ✓"):(lang==="es"?"Lo necesito":"I need it")}</button>
+      <button type="button" class="btn sm ${on?"":"ghost"}" data-rpart="${pid}" style="margin-top:auto">${on?(lang==="es"?"Marcado <svg class='bi' viewBox='0 0 24 24' aria-hidden='true'><path d='m5 12.5 4.5 4.5L19 7.5'/></svg>":"Selected <svg class='bi' viewBox='0 0 24 24' aria-hidden='true'><path d='m5 12.5 4.5 4.5L19 7.5'/></svg>"):(lang==="es"?"Lo necesito":"I need it")}</button>
     </article>`;
   }).join("");
 
@@ -612,9 +612,9 @@ function renderContacto(){
   const t = T();
   const realPhone = /^\d{10,15}$/.test(CONFIG.whatsapp) && CONFIG.whatsapp !== "573000000000";
   $("contactInfo").innerHTML = `
-    <li><b>📍 ${lang==="es"?"Dirección":"Address"}</b>${CONFIG.direccion}</li>
-    <li><b>🕘 ${lang==="es"?"Horario":"Hours"}</b>${lang==="es"?"Lun–Vie: 8:00 a. m. – 12:00 m. y 2:00 – 5:30 p. m. · Sáb: 8:00 a. m. – 1:00 p. m.":"Mon–Fri: 8:00 AM – 12:00 PM & 2:00 – 5:30 PM · Sat: 8:00 AM – 1:00 PM"}</li>
-    <li><b>✉️ ${lang==="es"?"Correo":"Email"}</b><a href="mailto:${CONFIG.correo}">${CONFIG.correo}</a></li>`;
+    <li><b><svg class='bi' viewBox='0 0 24 24' aria-hidden='true'><path d='M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z'/><circle cx='12' cy='10' r='2.4'/></svg>${lang==="es"?"Dirección":"Address"}</b>${CONFIG.direccion}</li>
+    <li><b><svg class='bi' viewBox='0 0 24 24' aria-hidden='true'><circle cx='12' cy='12' r='9'/><path d='M12 7v5l3.5 2'/></svg>${lang==="es"?"Horario":"Hours"}</b>${lang==="es"?"Lun–Vie: 8:00 a. m. – 12:00 m. y 2:00 – 5:30 p. m. · Sáb: 8:00 a. m. – 1:00 p. m.":"Mon–Fri: 8:00 AM – 12:00 PM & 2:00 – 5:30 PM · Sat: 8:00 AM – 1:00 PM"}</li>
+    <li><b><svg class='bi' viewBox='0 0 24 24' aria-hidden='true'><rect x='3' y='5.5' width='18' height='13' rx='2'/><path d='m3.5 7 8.5 6.5L20.5 7'/></svg>${lang==="es"?"Correo":"Email"}</b><a href="mailto:${CONFIG.correo}">${CONFIG.correo}</a></li>`;
   $("conWa").href = waUrl();
   $("conCall").hidden = !realPhone;
   $("conCall").href = "tel:+" + CONFIG.whatsapp;

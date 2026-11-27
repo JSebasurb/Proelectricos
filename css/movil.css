@@ -93,3 +93,13 @@ html[lang="en"] .seal .es,html:not([lang="en"]) .seal .en{display:none}
 .bi{width:1.15em;height:1.15em;vertical-align:-.2em;margin-right:6px}
 .hub-i:hover .qi,.hub-i:focus-visible .qi{color:var(--k)}
 .hub-i.wa .qi{color:#04200e}
+.wa-float .bi{width:1.3em;height:1.3em;margin-right:8px;vertical-align:-.3em}
+.btn .bi{margin-right:8px}
+
+.q-btn .bi,.x-btn .bi,.lens-close .bi,.tool-btn .bi,.icon-btn .bi{margin:0}
+.q-btn .bi{width:1.3rem;height:1.3rem;vertical-align:middle}
+.tool-btn .bi{width:1.35rem;height:1.35rem}
+.icon-btn .bi{width:1.15rem;height:1.15rem}
+.x-btn .bi,.lens-close .bi{width:1.05rem;height:1.05rem;vertical-align:middle}
+.best-tag .bi,.btn.sm .bi,.info-list .bi{width:1em;height:1em;margin-right:5px}
+.info-list b .bi{color:var(--cu)}

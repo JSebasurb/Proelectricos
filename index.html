@@ -133,7 +133,7 @@
 
     <div class="top-actions">
       <button type="button" class="q-btn" id="openQuoteBtn" aria-label="Mi cotización">
-        <span>🧾</span>
+        <span><svg class='bi' viewBox='0 0 24 24' aria-hidden='true'><path d='M6 3h12v18l-3-2-3 2-3-2-3 2z'/><path d='M9 8h6M9 12h6'/></svg></span>
         <span class="q-badge" id="qCount">0</span>
       </button>
       <button type="button" class="lang-btn" id="langToggle" aria-label="Cambiar idioma">EN</button>
@@ -145,7 +145,7 @@
 <div class="status-bar">
   <div class="status-bar-in">
     <span class="dot-live" id="liveStatus"><i></i><span>Cargando horario…</span></span>
-    <span>📍 Calle 4 #21C-14, Popayán</span>
+    <span><svg class='bi' viewBox='0 0 24 24' aria-hidden='true'><path d='M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z'/><circle cx='12' cy='10' r='2.4'/></svg>Calle 4 #21C-14, Popayán</span>
   </div>
 </div>
 
@@ -154,7 +154,7 @@
   <div class="drawer-head">
     <div class="drawer-logo"><img src="assets/img/logo-medallon.webp" width="620" height="620" decoding="async" alt=""></div>
     <strong>PRO<i>ELÉCTRICOS</i></strong>
-    <button type="button" class="x-btn" id="drawerClose" aria-label="Cerrar menú">✕</button>
+    <button type="button" class="x-btn" id="drawerClose" aria-label="Cerrar menú"><svg class='bi' viewBox='0 0 24 24' aria-hidden='true'><path d='M6 6l12 12M18 6 6 18'/></svg></button>
   </div>
   <nav id="drawerNav" aria-label="Navegación">
     <a href="#inicio" data-v="inicio"><span class="di"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10v9.5h13V10"/><path d="M10 19.5v-5h4v5"/></svg></span><b data-i18n="nav_home">Inicio</b></a>
@@ -192,7 +192,7 @@
         <div class="stack" id="heroSlides"></div>
         <div class="hero-dots" id="heroDots" role="group" aria-label="Información"></div>
         <div class="cta-row">
-          <a class="btn wa" id="heroWa" href="#" target="_blank" rel="noopener">💬 <span data-i18n="cta_wa">Cotizar por WhatsApp</span></a>
+          <a class="btn wa" id="heroWa" href="#" target="_blank" rel="noopener"><svg class="bi" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2.5 21.5z"/><path d="M9 9.5c.4 2 2.5 4.1 4.5 4.5l1.4-1.2-1.8-1.2-.8.6c-.7-.3-1.4-1-1.7-1.7l.6-.8-1.2-1.8z"/></svg><span data-i18n="cta_wa">Cotizar por WhatsApp</span></a>
           <a class="btn ghost" href="#catalogo" data-i18n="cta_cat">Ver Catálogo</a>
         </div>
         <div class="hero-note"><div class="stack" id="heroNotes"></div></div>
@@ -246,23 +246,23 @@
     <div class="wrap">
       <div class="sec-head">
         <h2 data-i18n="cat_title">Catálogo inteligente</h2>
-        <p data-i18n="cat_sub">Busca por modelo (ej. DWE4577), por tarea o toma una foto a la etiqueta con 📷.</p>
+        <p data-i18n="cat_sub">Busca por modelo (ej. DWE4577), por tarea o toma una foto a la etiqueta con el botón de cámara.</p>
       </div>
 
       <div class="search-box">
         <input type="search" id="searchInput" class="search-input" autocomplete="off">
         <button type="button" id="lensBtn" class="tool-btn dark" aria-label="Buscar por foto (BETA)">
-          📷<span class="beta-dot">BETA</span>
+          <svg class='bi' viewBox='0 0 24 24' aria-hidden='true'><path d='M4 8h3l1.5-2.5h7L17 8h3v11H4z'/><circle cx='12' cy='13' r='3.5'/></svg><span class="beta-dot">BETA</span>
         </button>
         <input type="file" id="lensFile" accept="image/*" hidden>
-        <button type="button" id="micBtn" class="tool-btn" hidden aria-label="Buscar por voz">🎤</button>
+        <button type="button" id="micBtn" class="tool-btn" hidden aria-label="Buscar por voz"><svg class='bi' viewBox='0 0 24 24' aria-hidden='true'><rect x='9' y='3' width='6' height='11' rx='3'/><path d='M5.5 11.5a6.5 6.5 0 0 0 13 0M12 18v3'/></svg></button>
       </div>
 
       <!-- PANEL BÚSQUEDA POR IMAGEN (BETA LOCAL) -->
       <div class="lens-box" id="lensBox" hidden aria-live="polite">
         <div class="lens-top">
           <div class="lens-tag"><span>BETA</span> <b data-i18n="lens_t">Búsqueda por foto (Local)</b></div>
-          <button type="button" class="lens-close" id="lensClose" aria-label="Cerrar">✕</button>
+          <button type="button" class="lens-close" id="lensClose" aria-label="Cerrar"><svg class='bi' viewBox='0 0 24 24' aria-hidden='true'><path d='M6 6l12 12M18 6 6 18'/></svg></button>
         </div>
         <div class="lens-body">
           <div class="lens-thumb">
@@ -274,7 +274,7 @@
             <progress class="lens-prog" id="lensProg" max="1" value="0" hidden></progress>
             <div class="cta-row" id="lensActions" hidden>
               <button type="button" class="btn sm" id="lensRetry" data-i18n="lens_retry">Otra foto</button>
-              <a class="btn sm wa" id="lensWa" href="#" target="_blank" rel="noopener">💬 <span data-i18n="lens_ask">Enviar consulta</span></a>
+              <a class="btn sm wa" id="lensWa" href="#" target="_blank" rel="noopener"><svg class="bi" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2.5 21.5z"/><path d="M9 9.5c.4 2 2.5 4.1 4.5 4.5l1.4-1.2-1.8-1.2-.8.6c-.7-.3-1.4-1-1.7-1.7l.6-.8-1.2-1.8z"/></svg><span data-i18n="lens_ask">Enviar consulta</span></a>
             </div>
             <details class="lens-det" id="lensDet" hidden>
               <summary data-i18n="lens_raw">Ver texto detectado</summary>
@@ -292,7 +292,7 @@
         <small id="catCount" style="font:600 .8rem var(--mono);color:var(--muted)"></small>
         <div style="display:flex;gap:8px;flex-wrap:wrap">
           <button type="button" class="btn sm ghost" id="clearLensBtn" hidden data-i18n="lens_clear">Ver todo el catálogo</button>
-          <button type="button" class="btn sm dark" id="openCmpBtn" hidden>⚖️ <span id="cmpLabel">Comparar</span></button>
+          <button type="button" class="btn sm dark" id="openCmpBtn" hidden><svg class='bi' viewBox='0 0 24 24' aria-hidden='true'><path d='M12 4v16M7 20h10M5 8h14'/><path d='M5 8l-2.5 6a3 3 0 0 0 5 0zM19 8l-2.5 6a3 3 0 0 0 5 0z'/></svg><span id="cmpLabel">Comparar</span></button>
         </div>
       </div>
 
@@ -317,7 +317,7 @@
         <h3 style="font-size:1.6rem;text-transform:uppercase" data-i18n="rep_form_t">Solicitar repuesto o reparación</h3>
 
         <div class="garage-box" data-garage="r">
-          <strong style="font:800 1.05rem var(--head);text-transform:uppercase" data-i18n="gar_t">🧰 Mis herramientas guardadas</strong>
+          <strong style="font:800 1.05rem var(--head);text-transform:uppercase" data-i18n="gar_t"><svg class='bi' viewBox='0 0 24 24' aria-hidden='true'><rect x='3' y='8' width='18' height='12' rx='2'/><path d='M9 8V6a1.5 1.5 0 0 1 1.5-1.5h3A1.5 1.5 0 0 1 15 6v2M3 13h18M11 13v2h2v-2'/></svg>Mis herramientas guardadas</strong>
           <small style="color:var(--muted)" data-i18n="gar_d">Guarda marca y modelo en tu celular para llenar formularios en un toque.</small>
           <div class="hscroll" data-gchips style="padding:2px 0"></div>
           <button type="button" class="btn sm ghost" data-gsave style="justify-self:start" data-i18n="gar_save">Guardar esta herramienta</button>
@@ -335,8 +335,8 @@
         </div>
         <p class="err-msg" id="rErr" hidden></p>
         <div class="cta-row">
-          <button type="submit" class="btn wa">💬 <span data-i18n="f_wa">Enviar por WhatsApp</span></button>
-          <button type="button" class="btn ghost" id="rMailBtn">✉️ <span data-i18n="f_mail">Enviar por correo</span></button>
+          <button type="submit" class="btn wa"><svg class="bi" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2.5 21.5z"/><path d="M9 9.5c.4 2 2.5 4.1 4.5 4.5l1.4-1.2-1.8-1.2-.8.6c-.7-.3-1.4-1-1.7-1.7l.6-.8-1.2-1.8z"/></svg><span data-i18n="f_wa">Enviar por WhatsApp</span></button>
+          <button type="button" class="btn ghost" id="rMailBtn"><svg class='bi' viewBox='0 0 24 24' aria-hidden='true'><rect x='3' y='5.5' width='18' height='13' rx='2'/><path d='m3.5 7 8.5 6.5L20.5 7'/></svg><span data-i18n="f_mail">Enviar por correo</span></button>
         </div>
       </form>
     </div>
@@ -373,7 +373,7 @@
         <form class="form-box" id="warForm" novalidate>
           <h3 style="font-size:1.55rem;text-transform:uppercase" data-i18n="wf_t">Pre-radicar garantía</h3>
           <div class="garage-box" data-garage="w">
-            <strong style="font:800 1.05rem var(--head);text-transform:uppercase" data-i18n="gar_t">🧰 Mis herramientas guardadas</strong>
+            <strong style="font:800 1.05rem var(--head);text-transform:uppercase" data-i18n="gar_t"><svg class='bi' viewBox='0 0 24 24' aria-hidden='true'><rect x='3' y='8' width='18' height='12' rx='2'/><path d='M9 8V6a1.5 1.5 0 0 1 1.5-1.5h3A1.5 1.5 0 0 1 15 6v2M3 13h18M11 13v2h2v-2'/></svg>Mis herramientas guardadas</strong>
             <div class="hscroll" data-gchips style="padding:2px 0"></div>
             <button type="button" class="btn sm ghost" data-gsave style="justify-self:start" data-i18n="gar_save">Guardar esta herramienta</button>
           </div>
@@ -388,8 +388,8 @@
           </div>
           <p class="err-msg" id="wErr" hidden></p>
           <div class="cta-row">
-            <button type="submit" class="btn wa">💬 <span data-i18n="f_wa">Enviar por WhatsApp</span></button>
-            <button type="button" class="btn ghost" id="wMailBtn">✉️ <span data-i18n="f_mail">Enviar por correo</span></button>
+            <button type="submit" class="btn wa"><svg class="bi" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2.5 21.5z"/><path d="M9 9.5c.4 2 2.5 4.1 4.5 4.5l1.4-1.2-1.8-1.2-.8.6c-.7-.3-1.4-1-1.7-1.7l.6-.8-1.2-1.8z"/></svg><span data-i18n="f_wa">Enviar por WhatsApp</span></button>
+            <button type="button" class="btn ghost" id="wMailBtn"><svg class='bi' viewBox='0 0 24 24' aria-hidden='true'><rect x='3' y='5.5' width='18' height='13' rx='2'/><path d='m3.5 7 8.5 6.5L20.5 7'/></svg><span data-i18n="f_mail">Enviar por correo</span></button>
           </div>
         </form>
       </div>
@@ -438,7 +438,7 @@
           </div>
           <p class="err-msg" id="wWarn" hidden style="color:#ff9e9e" data-i18n="w_warn110">A 110 V este consumo supera un tomacorriente común (15–20 A): usa 220 V.</p>
           <p style="font-size:.82rem;color:#bbb" data-i18n="w_note">Valores orientativos para electrodo revestido (~85 % eficiencia). Confirma el rango en la caja del electrodo y verifica protecciones con un electricista.</p>
-          <a class="btn wa block" id="waWeld" href="#" target="_blank" rel="noopener">💬 <span data-i18n="w_cta">Cotizar inversor adecuado</span></a>
+          <a class="btn wa block" id="waWeld" href="#" target="_blank" rel="noopener"><svg class="bi" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2.5 21.5z"/><path d="M9 9.5c.4 2 2.5 4.1 4.5 4.5l1.4-1.2-1.8-1.2-.8.6c-.7-.3-1.4-1-1.7-1.7l.6-.8-1.2-1.8z"/></svg><span data-i18n="w_cta">Cotizar inversor adecuado</span></a>
         </aside>
       </div>
     </div>
@@ -484,9 +484,9 @@
         </div>
         <ul class="info-list" id="contactInfo" style="margin-bottom:14px"></ul>
         <div class="cta-row" style="margin-bottom:18px">
-          <a class="btn wa" id="conWa" href="#" target="_blank" rel="noopener">💬 WhatsApp</a>
-          <a class="btn dark" id="conCall" href="#" hidden>📞 <span data-i18n="call">Llamar</span></a>
-          <a class="btn ghost" id="conDir" href="#" target="_blank" rel="noopener">🗺️ <span data-i18n="dir">Cómo llegar</span></a>
+          <a class="btn wa" id="conWa" href="#" target="_blank" rel="noopener"><svg class="bi" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2.5 21.5z"/><path d="M9 9.5c.4 2 2.5 4.1 4.5 4.5l1.4-1.2-1.8-1.2-.8.6c-.7-.3-1.4-1-1.7-1.7l.6-.8-1.2-1.8z"/></svg>WhatsApp</a>
+          <a class="btn dark" id="conCall" href="#" hidden><svg class='bi' viewBox='0 0 24 24' aria-hidden='true'><path d='M5 4h4l1.5 4-2 1.3a11 11 0 0 0 5.2 5.2l1.3-2L19 14.5V19a1.5 1.5 0 0 1-1.6 1.5C10 20 4 14 3.5 6.6A1.5 1.5 0 0 1 5 4z'/></svg><span data-i18n="call">Llamar</span></a>
+          <a class="btn ghost" id="conDir" href="#" target="_blank" rel="noopener"><svg class='bi' viewBox='0 0 24 24' aria-hidden='true'><path d='M9 4 3.5 6v14L9 18l6 2 5.5-2V4L15 6z'/><path d='M9 4v14M15 6v14'/></svg><span data-i18n="dir">Cómo llegar</span></a>
           <a class="btn ghost" id="conFb" href="#" target="_blank" rel="noopener">Facebook</a>
         </div>
         <iframe id="mapFrame" class="map-frame" title="Ubicación Proeléctricos Popayán" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -502,8 +502,8 @@
         </div>
         <p class="err-msg" id="cErr" hidden></p>
         <div class="cta-row">
-          <button type="submit" class="btn wa">💬 <span data-i18n="f_wa">Enviar por WhatsApp</span></button>
-          <button type="button" class="btn ghost" id="cMailBtn">✉️ <span data-i18n="f_mail">Enviar por correo</span></button>
+          <button type="submit" class="btn wa"><svg class="bi" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2.5 21.5z"/><path d="M9 9.5c.4 2 2.5 4.1 4.5 4.5l1.4-1.2-1.8-1.2-.8.6c-.7-.3-1.4-1-1.7-1.7l.6-.8-1.2-1.8z"/></svg><span data-i18n="f_wa">Enviar por WhatsApp</span></button>
+          <button type="button" class="btn ghost" id="cMailBtn"><svg class='bi' viewBox='0 0 24 24' aria-hidden='true'><rect x='3' y='5.5' width='18' height='13' rx='2'/><path d='m3.5 7 8.5 6.5L20.5 7'/></svg><span data-i18n="f_mail">Enviar por correo</span></button>
         </div>
       </form>
     </div>
@@ -531,19 +531,19 @@
 
 <!-- ===== NAVEGACIÓN INFERIOR MÓVIL ===== -->
 <!-- ===== BOTÓN FLOTANTE WHATSAPP ===== -->
-<a class="wa-float" id="waFloat" href="#" target="_blank" rel="noopener" aria-label="WhatsApp">💬 WhatsApp</a>
+<a class="wa-float" id="waFloat" href="#" target="_blank" rel="noopener" aria-label="WhatsApp"><svg class="bi" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2.5 21.5z"/><path d="M9 9.5c.4 2 2.5 4.1 4.5 4.5l1.4-1.2-1.8-1.2-.8.6c-.7-.3-1.4-1-1.7-1.7l.6-.8-1.2-1.8z"/></svg>WhatsApp</a>
 
 <!-- ===== MODAL COTIZACIÓN ===== -->
 <dialog id="quoteDlg" aria-labelledby="qDlgTitle">
   <div class="dlg-head">
     <h3 id="qDlgTitle" data-i18n="q_title">Mi lista de cotización</h3>
-    <button type="button" class="x-btn" data-close>✕</button>
+    <button type="button" class="x-btn" data-close><svg class='bi' viewBox='0 0 24 24' aria-hidden='true'><path d='M6 6l12 12M18 6 6 18'/></svg></button>
   </div>
   <ul class="q-list" id="qList"></ul>
   <p id="qEmpty" style="color:var(--muted);margin-bottom:14px" data-i18n="q_empty">Aún no has agregado productos del catálogo.</p>
   <div class="cta-row">
-    <a class="btn wa" id="qSendWa" href="#" target="_blank" rel="noopener">💬 <span data-i18n="q_send">Cotizar por WhatsApp</span></a>
-    <button type="button" class="btn dark" id="qPrintBtn">🖨️ <span data-i18n="q_print">PDF / Imprimir</span></button>
+    <a class="btn wa" id="qSendWa" href="#" target="_blank" rel="noopener"><svg class="bi" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2.5 21.5z"/><path d="M9 9.5c.4 2 2.5 4.1 4.5 4.5l1.4-1.2-1.8-1.2-.8.6c-.7-.3-1.4-1-1.7-1.7l.6-.8-1.2-1.8z"/></svg><span data-i18n="q_send">Cotizar por WhatsApp</span></a>
+    <button type="button" class="btn dark" id="qPrintBtn"><svg class='bi' viewBox='0 0 24 24' aria-hidden='true'><path d='M7 9V4h10v5'/><rect x='4' y='9' width='16' height='8' rx='2'/><path d='M7 14h10v6H7z'/></svg><span data-i18n="q_print">PDF / Imprimir</span></button>
     <button type="button" class="btn ghost" id="qClearBtn" data-i18n="q_clear">Vaciar</button>
   </div>
 </dialog>
@@ -552,7 +552,7 @@
 <dialog id="cmpDlg" aria-labelledby="cmpDlgTitle">
   <div class="dlg-head">
     <h3 id="cmpDlgTitle" data-i18n="cmp_title">Comparador</h3>
-    <button type="button" class="x-btn" data-close>✕</button>
+    <button type="button" class="x-btn" data-close><svg class='bi' viewBox='0 0 24 24' aria-hidden='true'><path d='M6 6l12 12M18 6 6 18'/></svg></button>
   </div>
   <div class="table-wrap" style="margin-bottom:14px"><table id="cmpTable"></table></div>
   <button type="button" class="btn ghost block" id="cmpClearBtn" data-i18n="cmp_clear">Limpiar comparador</button>
