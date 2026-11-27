@@ -130,11 +130,11 @@ const USOS = [
 
 const I18N = {
   es:{
-    brand_sub:"Popayán · Servicio Autorizado DEWALT",
+    brand_sub:"Servicio autorizado · Garantía y repuestos",
     nav_home:"Inicio",nav_cat:"Catálogo",nav_rep:"Repuestos",nav_war:"Garantías",nav_tools:"Calculadoras",nav_con:"Contacto",
-    hero_badge:"Centro de Servicio Autorizado DEWALT",
+    hero_badge:"Servicio autorizado DEWALT · Garantía y repuestos",
     hero_title:"Potencia real y respaldo <span>en Popayán</span>",
-    hero_lead:"Herramienta eléctrica DEWALT, inversores soldadores, alambre de cobre esmaltado, repuestos originales y taller autorizado. Asesoría directa sin intermediarios.",
+    hero_lead:"Herramienta eléctrica DEWALT, inversores soldadores, alambre de cobre esmaltado y repuestos originales. Somos servicio autorizado en garantía y repuestos, con asesoría directa sin intermediarios.",
     cta_wa:"Cotizar por WhatsApp",cta_cat:"Ver Catálogo",
     hero_box_t:"Respaldo Local Directo",
     hero_box_d:"Si tu herramienta DEWALT falla, no tienes que enviarla a otra ciudad. La recibimos y gestionamos aquí mismo.",
@@ -192,11 +192,11 @@ const I18N = {
     legal:"Proeléctricos es centro de servicio autorizado DEWALT en Popayán. DEWALT y sus logotipos son marcas registradas de sus respectivos propietarios."
   },
   en:{
-    brand_sub:"Popayán · DEWALT Authorized Service",
+    brand_sub:"Authorized service · Warranty & parts",
     nav_home:"Home",nav_cat:"Catalog",nav_rep:"Parts",nav_war:"Warranty",nav_tools:"Calculators",nav_con:"Contact",
-    hero_badge:"DEWALT Authorized Service Center",
+    hero_badge:"DEWALT authorized service · Warranty & spare parts",
     hero_title:"Real power & local support <span>in Popayán</span>",
-    hero_lead:"DEWALT power tools, welding inverters, enameled copper wire, genuine spare parts and authorized service. Direct advice with no middlemen.",
+    hero_lead:"DEWALT power tools, welding inverters, enameled copper wire and genuine spare parts. We are an authorized service center for warranty and spare parts, with direct advice and no middlemen.",
     cta_wa:"Quote on WhatsApp",cta_cat:"Browse Catalog",
     hero_box_t:"Direct Local Support",
     hero_box_d:"If your DEWALT tool fails, no need to ship it out of town. We receive and handle it right here.",

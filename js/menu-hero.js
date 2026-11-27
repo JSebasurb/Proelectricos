@@ -14,7 +14,7 @@
   dr.addEventListener("click",e=>{if(e.target.closest("#drawerNav a,#drawerWa"))open(false)});
   $("drawerLang").addEventListener("click",()=>$("langToggle").click());
   document.addEventListener("keydown",e=>{if(e.key==="Escape"&&dr.classList.contains("open"))open(false)});
-  matchMedia("(min-width:768px)").addEventListener("change",e=>{if(e.matches&&dr.classList.contains("open"))open(false)});
+  matchMedia("(min-width:1180px)").addEventListener("change",e=>{if(e.matches&&dr.classList.contains("open"))open(false)});
 })();
 
 /* ===== Hero dinámico ===== */
@@ -24,15 +24,15 @@
   const COPY={
     es:[
       {b:"Trayectoria",t:"Más de 20 años <span>de experiencia</span>",l:"Proeléctricos acompaña a talleres, técnicos y hogares de Popayán con herramienta eléctrica, repuestos y servicio autorizado.",nt:"Experiencia local",nd:"Más de dos décadas atendiendo a Popayán."},
-      {b:"Taller autorizado",t:"Tu DEWALT reparada <span>aquí mismo</span>",l:"Recibimos tu herramienta en Popayán y gestionamos la reparación o la garantía sin que tengas que enviarla a otra ciudad.",nt:"Garantía DEWALT",nd:"Gestionamos tu caso directamente con la marca."},
+      {b:"Servicio autorizado",t:"Tu garantía DEWALT <span>gestionada aquí mismo</span>",l:"Somos servicio autorizado: recibimos tu herramienta en Popayán y tramitamos la garantía sin que tengas que enviarla a otra ciudad.",nt:"Garantía DEWALT",nd:"Gestionamos tu caso directamente con la marca."},
       {b:"Soldadura y bobinados",t:"Inversores y <span>alambre esmaltado</span>",l:"Inversores soldadores, alambre de cobre esmaltado para rebobinado y todo para el taller eléctrico.",nt:"Para talleres",nd:"Te ayudamos a elegir el calibre y la potencia correctos."},
-      {b:"Repuestos",t:"Repuestos <span>originales</span> a la mano",l:"Carbones, interruptores, rodamientos, engranajes y más para tu herramienta eléctrica.",nt:"Búscalo por referencia",nd:"Usa el buscador de repuestos o escríbenos con la referencia."}
+      {b:"Repuestos",t:"Repuestos <span>originales</span> a la mano",l:"Repuestos originales para tu herramienta DEWALT. Búscalos por referencia o escríbenos.",nt:"Búscalo por referencia",nd:"Usa el buscador de repuestos o escríbenos con la referencia."}
     ],
     en:[
       {b:"Our story",t:"Over 20 years <span>of experience</span>",l:"Proeléctricos has served workshops, technicians and households in Popayán with power tools, spare parts and authorized service.",nt:"Local experience",nd:"More than two decades serving Popayán."},
-      {b:"Authorized workshop",t:"Your DEWALT repaired <span>right here</span>",l:"We receive your tool in Popayán and handle the repair or warranty claim, no need to ship it to another city.",nt:"DEWALT warranty",nd:"We manage your case directly with the brand."},
+      {b:"Authorized service",t:"Your DEWALT warranty <span>handled right here</span>",l:"We are an authorized service center: we receive your tool in Popayán and process the warranty claim, no need to ship it to another city.",nt:"DEWALT warranty",nd:"We manage your case directly with the brand."},
       {b:"Welding & windings",t:"Inverters & <span>enameled wire</span>",l:"Welding inverters, enameled copper wire for rewinding and everything for the electrical workshop.",nt:"For workshops",nd:"We help you pick the right gauge and power."},
-      {b:"Spare parts",t:"<span>Genuine</span> parts at hand",l:"Carbon brushes, switches, bearings, gears and more for your power tool.",nt:"Search by part number",nd:"Use the parts finder or message us the reference."}
+      {b:"Spare parts",t:"<span>Genuine</span> parts at hand",l:"Genuine spare parts for your DEWALT tool. Search by part number or message us.",nt:"Search by part number",nd:"Use the parts finder or message us the reference."}
     ]
   };
   function liveSlide(){
