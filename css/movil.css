@@ -103,3 +103,8 @@ html[lang="en"] .seal .es,html:not([lang="en"]) .seal .en{display:none}
 .x-btn .bi,.lens-close .bi{width:1.05rem;height:1.05rem;vertical-align:middle}
 .best-tag .bi,.btn.sm .bi,.info-list .bi{width:1em;height:1em;margin-right:5px}
 .info-list b .bi{color:var(--cu)}
+
+.bi path[d^="M17.472"]{stroke:none}
+.btn .bi,.wa-float .bi{width:1.3em;height:1.3em}
+.hub-i.wa .qi{color:#fff}
+#conFb{display:inline-flex;align-items:center;justify-content:center}
