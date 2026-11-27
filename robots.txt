@@ -1,7 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /worker/
-Disallow: /plantillas/
-Disallow: /herramientas/
-
-Sitemap: https://JSebasurb.github.io/Proelectricos/sitemap.xml

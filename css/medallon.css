@@ -1,0 +1,94 @@
+/* Proeléctricos Popayán · capa visual "medallón" (hero, hub radial, medallas) */
+/* ===== CAPA MEDALLÓN ===== */
+:root{--paper:#ECEDEE;--line:#CDD0D4;--steel:#23272C;--r:20px;--gearbg:url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%201000%201000%27%20fill%3D%27none%27%20stroke%3D%27white%27%20stroke-opacity%3D%27.07%27%20stroke-width%3D%273%27%3E%3Cpath%20d%3D%27M461.8%2C71.7%20L474.4%2C10.7%20L525.6%2C10.7%20L538.2%2C71.7%20L573.9%2C76.4%20L601.9%2C20.7%20L651.4%2C34.0%20L647.8%2C96.2%20L681.0%2C110.0%20L722.5%2C63.4%20L766.9%2C89.1%20L747.3%2C148.2%20L775.8%2C170.1%20L827.9%2C135.9%20L864.1%2C172.1%20L829.9%2C224.2%20L851.8%2C252.7%20L910.9%2C233.1%20L936.6%2C277.5%20L890.0%2C319.0%20L903.8%2C352.2%20L966.0%2C348.6%20L979.3%2C398.1%20L923.6%2C426.1%20L928.3%2C461.8%20L989.3%2C474.4%20L989.3%2C525.6%20L928.3%2C538.2%20L923.6%2C573.9%20L979.3%2C601.9%20L966.0%2C651.4%20L903.8%2C647.8%20L890.0%2C681.0%20L936.6%2C722.5%20L910.9%2C766.9%20L851.8%2C747.3%20L829.9%2C775.8%20L864.1%2C827.9%20L827.9%2C864.1%20L775.8%2C829.9%20L747.3%2C851.8%20L766.9%2C910.9%20L722.5%2C936.6%20L681.0%2C890.0%20L647.8%2C903.8%20L651.4%2C966.0%20L601.9%2C979.3%20L573.9%2C923.6%20L538.2%2C928.3%20L525.6%2C989.3%20L474.4%2C989.3%20L461.8%2C928.3%20L426.1%2C923.6%20L398.1%2C979.3%20L348.6%2C966.0%20L352.2%2C903.8%20L319.0%2C890.0%20L277.5%2C936.6%20L233.1%2C910.9%20L252.7%2C851.8%20L224.2%2C829.9%20L172.1%2C864.1%20L135.9%2C827.9%20L170.1%2C775.8%20L148.2%2C747.3%20L89.1%2C766.9%20L63.4%2C722.5%20L110.0%2C681.0%20L96.2%2C647.8%20L34.0%2C651.4%20L20.7%2C601.9%20L76.4%2C573.9%20L71.7%2C538.2%20L10.7%2C525.6%20L10.7%2C474.4%20L71.7%2C461.8%20L76.4%2C426.1%20L20.7%2C398.1%20L34.0%2C348.6%20L96.2%2C352.2%20L110.0%2C319.0%20L63.4%2C277.5%20L89.1%2C233.1%20L148.2%2C252.7%20L170.1%2C224.2%20L135.9%2C172.1%20L172.1%2C135.9%20L224.2%2C170.1%20L252.7%2C148.2%20L233.1%2C89.1%20L277.5%2C63.4%20L319.0%2C110.0%20L352.2%2C96.2%20L348.6%2C34.0%20L398.1%2C20.7%20L426.1%2C76.4Z%27/%3E%3Ccircle%20cx%3D%27500%27%20cy%3D%27500%27%20r%3D%27350%27/%3E%3Ccircle%20cx%3D%27500%27%20cy%3D%27500%27%20r%3D%27260%27%20stroke-dasharray%3D%276%2014%27/%3E%3C/svg%3E")}
+body{background:var(--paper)}
+.sec-alt{background:#DEE0E2}
+.sec{padding:34px 0}
+.sec-head h2{display:flex;align-items:center;gap:.45em}
+.sec-head h2::before{content:"";flex:none;width:.6em;height:.6em;border-radius:50%;background:radial-gradient(circle,var(--k) 0 26%,var(--y) 28%);box-shadow:0 0 0 .09em var(--k)}
+.sec-dark .sec-head h2::before{box-shadow:0 0 0 .09em #ffffff55}
+.sec-head h2::after{display:none}
+
+/* cabecera: medallón sobre cinta */
+.topbar{padding-top:env(safe-area-inset-top,0px);border-bottom:0;box-shadow:0 4px 0 var(--y),0 9px 18px rgba(0,0,0,.4)}
+.topbar-in{padding:10px 16px}
+.brand-img-wrap{width:52px;height:52px;background:none;border:0;overflow:visible;box-shadow:0 0 0 3px var(--k),0 0 0 5px var(--y)}
+.brand-img-wrap img{transform:none;border-radius:50%;object-fit:cover}
+.status-bar-in{padding-top:8px}
+
+/* botones y controles redondos */
+.btn{border-radius:999px;padding:10px 24px}
+.icon-btn,.tool-btn{border-radius:50%}
+.q-btn,.lang-btn,.hero-badge{border-radius:999px}
+.search-input{border-radius:999px;padding-left:20px}
+.field input,.field select,.field textarea{border-radius:12px;border-width:1.5px}
+.card,.form-box,.calc-res,.lens-box,.acc details,.info-list li,.garage-box,.map-frame{border-radius:var(--r)}
+.table-wrap{border-radius:16px;border-width:1.5px}
+.form-box{border:1.5px solid var(--line);border-top:4px solid var(--y);padding:20px 16px}
+.info-list li{border-width:1.5px;border-left-width:5px}
+dialog{border-radius:24px 24px 0 0}
+
+/* hero con medallón */
+.hero{background:radial-gradient(110% 80% at 78% 38%,#2c2610 0,#111214 50%,var(--k) 100%);padding:30px 0 0}
+.hero::before{content:"";position:absolute;width:min(150vw,920px);aspect-ratio:1;top:-6%;right:-45%;background:var(--gearbg) center/contain no-repeat;pointer-events:none}
+.hero-grid{position:relative;gap:30px;justify-items:center;text-align:center}
+.hero-copy{grid-row:2}
+.hero h1{text-wrap:balance}
+.hero-lead{margin-inline:auto}
+.hero .cta-row{justify-content:center}
+.hero-badge{padding:5px 14px}
+.hero-note{margin:22px auto 0;max-width:46ch;padding-top:14px;border-top:1px solid #ffffff26}
+.hero-note strong{font:900 1.3rem var(--head);color:var(--y);text-transform:uppercase}
+.hero-note p{font-size:.88rem;color:#c9c9c9;margin-top:3px}
+.medal{grid-row:1;position:relative;width:min(80vw,340px);aspect-ratio:1;filter:drop-shadow(0 20px 28px rgba(0,0,0,.65)) drop-shadow(0 0 30px rgba(255,194,14,.16))}
+.medal svg{position:absolute;inset:0;width:100%;height:100%}
+.medal img{position:absolute;left:10.9%;top:10.9%;width:78.2%;height:78.2%;object-fit:contain}
+.medal .spin{transform-origin:260px 260px;animation:medalspin 120s linear infinite}
+.medal text{font:800 27px var(--head);fill:var(--y)}
+@keyframes medalspin{to{transform:rotate(360deg)}}
+.copper-bar{margin-top:34px}
+
+/* hub radial */
+.hub{position:relative;width:min(calc(100% - 14px),500px);aspect-ratio:1;margin:12px auto 6px}
+.hub::before{content:"";position:absolute;inset:14%;border-radius:50%;border:2px dashed #9da1a7}
+.hub-core{position:absolute;inset:32%;border-radius:50%;box-shadow:0 0 0 4px var(--paper),0 0 0 6px var(--k),0 14px 28px rgba(0,0,0,.28)}
+.hub-core img{width:100%;height:100%;object-fit:contain}
+.hub-i{position:absolute;left:50%;top:50%;width:26%;aspect-ratio:1;margin:-13% 0 0 -13%;display:grid;place-content:center;justify-items:center;gap:3px;border-radius:50%;background:radial-gradient(circle at 35% 25%,#363b41,var(--k) 72%);color:#fff;text-decoration:none;box-shadow:0 0 0 3px var(--k),0 0 0 5px var(--y),0 12px 18px rgba(0,0,0,.28);transform:rotate(var(--a)) translateX(138.5%) rotate(calc(var(--a) * -1));transition:background .15s,color .15s}
+.hub-i .qi{font-size:clamp(1.3rem,6vw,2rem);line-height:1}
+.hub-i strong{font:800 clamp(.74rem,3.2vw,1.15rem)/1 var(--head);text-transform:uppercase;letter-spacing:.03em}
+.hub-i:hover,.hub-i:focus-visible{background:var(--y);color:var(--k)}
+.hub-i.wa{background:radial-gradient(circle at 35% 25%,#46e585,#14893f 78%);color:#04200e}
+
+/* categorías y productos como medallas */
+.cat-tile{border:1.5px solid var(--line);border-radius:24px;padding:18px 10px 14px;gap:10px}
+.cat-tile .cico{width:80px;height:80px;border-radius:50%;padding:15px;background:radial-gradient(circle at 35% 25%,#2f343a,var(--k) 72%);box-shadow:0 0 0 3px #fff,0 0 0 5px var(--y)}
+.prod-card{display:grid;grid-template-columns:114px 1fr;column-gap:12px;row-gap:6px;align-items:start;border:1.5px solid #3b4047;border-radius:24px;padding:16px}
+.prod-pic{grid-row:1/4;align-self:center;width:104px;height:104px;margin:5px;padding:0;border-radius:50%;background:radial-gradient(circle at 35% 25%,#30353b,var(--k) 72%);box-shadow:0 0 0 3px var(--steel),0 0 0 5px var(--y)}
+.prod-pic svg{width:62%;height:auto}
+.prod-card>.meta-row,.prod-card>.prod-acts{grid-column:1/-1}
+.prod-card h3{font-size:1.2rem}
+.best-tag{border-radius:999px;padding:2px 10px}
+
+/* barra inferior con medalla central */
+.bottom-nav{border-top:0;box-shadow:0 -4px 0 var(--y);align-items:end;padding-top:8px}
+.bottom-nav a:nth-child(3){width:66px;height:66px;margin:-34px auto 0;border-radius:50%;align-content:center;background:var(--y);color:var(--k);box-shadow:0 0 0 4px var(--k),0 0 0 6px var(--y)}
+.bottom-nav a:nth-child(3)[aria-current="page"]{box-shadow:0 0 0 4px var(--k),0 0 0 7px #fff}
+
+/* pie */
+footer{border-top:0;padding-top:0;margin-top:30px}
+footer::before{content:"";display:block;height:12px;margin-bottom:30px;background:repeating-linear-gradient(100deg,#7c461b 0 3px,var(--cu) 3px 7px,#ebb07f 7px 9px,var(--cu) 9px 12px,#7c461b 12px 15px)}
+.foot-logo{width:132px;height:132px;border:0;background:none;object-fit:contain;box-shadow:0 0 0 4px var(--k),0 0 0 6px var(--y),0 0 0 12px var(--k),0 0 0 13px #3a3f46;margin:10px 0}
+
+@media(min-width:768px){
+  .hero{padding:58px 0 0}
+  .hero-grid{grid-template-columns:1.05fr .95fr;text-align:left;justify-items:stretch;align-items:center;gap:40px}
+  .hero-copy{grid-column:1;grid-row:1}
+  .medal{grid-column:2;grid-row:1;justify-self:center;width:min(100%,480px)}
+  .hero-lead{margin-inline:0}
+  .hero .cta-row{justify-content:flex-start}
+  .hero-note{margin-left:0}
+  .hero::before{right:-14%;top:-14%}
+  .sec{padding:48px 0}
+  dialog{border-radius:24px}
+}
+@media(prefers-reduced-motion:reduce){.medal .spin{animation:none}}
